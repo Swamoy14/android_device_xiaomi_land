@@ -212,3 +212,7 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 
 # Force wifi interface for wlan0
 wifi.interface=wlan0
+
+# property to enable user to access Google WFD settings.
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.debug.wfd.enable=1
