@@ -73,3 +73,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     user root
     disabled
     oneshot
+
+on boot
+        chown system system /sys/kernel/hbtp/display_pwr
