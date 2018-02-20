@@ -262,6 +262,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshims_camera
 
+# LiveDisplay native
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@1.0-service-sdm
+
 # Media
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
