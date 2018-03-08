@@ -370,6 +370,7 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.goodix.sh \
     ueventd.qcom.rc \
     init.safailnet.rc
 

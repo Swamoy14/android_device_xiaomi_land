@@ -425,8 +425,14 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     disabled
     oneshot
 
+service goodix_script /vendor/bin/init.goodix.sh
+    class late_start
+    user root
+    oneshot
+
 on property:init.svc.media=restarting
     restart qcamerasvr
 
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
+
