@@ -373,6 +373,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# RCS
+PRODUCT_PACKAGES += \
+    PresencePolling \
+    RcsService
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
