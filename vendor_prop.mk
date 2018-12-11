@@ -69,6 +69,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.is_type=1 \
     vidc.enc.dcvs.extra-buff-count=2 \
     persist.ts.rtmakeup=true \
+    persist.camera.eis.enable=1 \
     media.camera.ts.monotonic=1
 
 # CNE
