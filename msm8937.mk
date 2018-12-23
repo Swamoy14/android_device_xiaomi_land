@@ -371,7 +371,9 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.target.rc \
     init.goodix.sh \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.spectrum.rc \
+    init.spectrum.sh
 
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
