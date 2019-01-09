@@ -146,13 +146,13 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-# fwk-detect
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect
-
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
