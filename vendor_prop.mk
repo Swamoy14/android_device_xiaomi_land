@@ -126,7 +126,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.vidc.enc.narrow.searchrange=1 \
     vendor.video.disable.ubwc=1 \
-    debug.media.codec2=2 
+    debug.media.codec2=2
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -141,20 +141,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     persist.vendor.data.iwlan.enable=true \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
-    persist.radio.aosp_usr_pref_sel=true \
     ro.telephony.use_old_mnc_mcc_format=true
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true \
-
-# Trim properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.use_trim_settings=true \
-    ro.vendor.qti.sys.fw.empty_app_percent=50 \
-    ro.vendor.qti.sys.fw.trim_empty_percent=100 \
-    ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,11 +154,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# VoLTE hax
-PRODUCT_PROPERTY_OVERRIDES += \
-   persist.dbg.volte_avail_ovr=1 \
-   persist.dbg.vt_avail_ovr=1
 
 # Perf
 PRODUCT_PROPERTY_OVVERIDES += \
@@ -182,19 +168,11 @@ vendor.iop.enable_prefetch_ofr=1 \
 vendor.perf.iop_v3.enable=1 \
 persist.vendor.qti.games.gt.prof=1 \
 
-# Optimize
-PRODUCT_PROPERTY_OVERRIDES += \
-sys.use_fifo_ui=1
-
 # Sim Selection Fix
 persist.vendor.radio.aosp_usr_pref_sel=true
 
 # SurfaceFlinger sensor props
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
-    debug.sf.early_gl_app_phase_offset_ns=15000000 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
@@ -205,3 +183,7 @@ wifi.interface=wlan0
 
 #Spectrum
 spectrum.support=1
+
+# Optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+sys.use_fifo_ui=1
