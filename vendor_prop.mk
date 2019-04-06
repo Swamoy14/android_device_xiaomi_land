@@ -142,6 +142,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     persist.vendor.data.iwlan.enable=true \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
+    persist.radio.aosp_usr_pref_sel=true \
     ro.telephony.use_old_mnc_mcc_format=true
 
 # Time Services
