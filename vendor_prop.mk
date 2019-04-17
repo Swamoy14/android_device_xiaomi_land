@@ -187,3 +187,9 @@ persist.vendor.radio.aosp_usr_pref_sel=true
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 
+# Wifi
+PRODUCT_PROPERTY_OVERRIDES += \
+wifi.interface=wlan0
+
+#Spectrum
+spectrum.support=1

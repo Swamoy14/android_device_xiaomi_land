@@ -2,3 +2,5 @@
 binder_call(system_app, fingerprintd)
 allow system_app fm_prop:property_service set;
 get_prop(system_app, fm_prop)
+allow system_app spectrum_prop:property_service set;
+get_prop(system_app, spectrum_prop);
