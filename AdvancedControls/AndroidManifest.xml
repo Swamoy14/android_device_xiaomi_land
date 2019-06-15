@@ -39,11 +39,6 @@
             android:name="com.thht.settings.device.RestoreService"
             android:enabled="true"
             android:exported="true">
-		</service>
-        <service 
-            android:name="com.thht.settings.device.dirac.AudioEnhancerService"
-            android:enabled="true"
-            android:exported="true">
-        </service>
+	</service>
     </application>
 </manifest>

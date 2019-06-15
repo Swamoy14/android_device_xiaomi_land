@@ -36,7 +36,7 @@ public class DeviceSettings extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        
+
         // Set theme
         IOverlayManager overlayManager;
         overlayManager = IOverlayManager.Stub.asInterface(
@@ -50,7 +50,7 @@ public class DeviceSettings extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_YES);
         }
-        
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.device_settings);
         getFragmentManager().beginTransaction().
@@ -59,4 +59,3 @@ public class DeviceSettings extends AppCompatActivity {
     }
 
 }
-
