@@ -406,6 +406,9 @@ vendor/lib64/libqti-iopd-client.so|c7296f02c126f8c7402eae0f79737908901afa36
 vendor/lib64/vendor.qti.hardware.iop@1.0.so|3f738546cbdebf7d7a769568c4c5b43f3d8e2c54
 vendor/lib64/vendor.qti.hardware.iop@2.0.so|f40ce3fe82f85dba57df0185cc42e491da585329
 
+# Ipacm - from olive - QKQ1.191014.001 V11.0.1.0.QCNCNXM
+vendor/bin/ipacm-diag|529c986df1464e6d943858445a744eeece917330
+
 # Keystore - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8937.so|265cd4d0246f5e2e80916dd1c96262be28306b31
 
