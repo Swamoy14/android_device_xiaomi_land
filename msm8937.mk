@@ -131,10 +131,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
 
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts \
-    AdvancedControls
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -416,3 +412,7 @@ PRODUCT_BOOT_JARS += \
 
 # Inherit common proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts
