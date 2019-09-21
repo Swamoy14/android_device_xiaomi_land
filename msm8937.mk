@@ -17,6 +17,9 @@
 
 VENDOR_PATH := device/xiaomi/msm8937-common
 
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(VENDOR_PATH)/overlay \
