@@ -157,3 +157,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVVERIDES += \
 ro.vendor.extension_library=libqti-perfd-client.so \
 ro.vendor.qti.sys.fw.bg_apps_limit=60 
+
+# Optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+sys.use_fifo_ui=1
