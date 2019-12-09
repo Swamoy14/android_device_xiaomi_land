@@ -179,6 +179,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml \
     $(LOCAL_PATH)/configs/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
 
+# XiaomiParts
+PRODUCT_PACKAGES += \
+   XiaomiParts
+
 # Doze mode
 PRODUCT_PACKAGES += \
     XiaomiDoze
