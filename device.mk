@@ -469,7 +469,7 @@ PRODUCT_BOOT_JARS += \
     
 # Wallpapers
 PRODUCT_PACKAGES += \
-    WallpapersBReel2019
+    PixelLiveWallpaperPrebuilt
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
