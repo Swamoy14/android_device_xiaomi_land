@@ -152,6 +152,10 @@ PRODUCT_PACKAGES += \
 # Charger
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
+# Dex
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \
@@ -167,7 +171,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
@@ -210,11 +214,6 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-	android.hardware.gnss@1.0-impl-qti \
-	android.hardware.gnss@1.0-impl-qti \
-	android.hardware.gnss@1.0-service-qti \
-	android.hardware.gnss@1.1-impl-qti \
-	android.hardware.gnss@1.1-service-qti \
     android.hardware.gnss@2.0-impl-qti \
     android.hardware.gnss@2.0-service-qti \
     libbatching \
