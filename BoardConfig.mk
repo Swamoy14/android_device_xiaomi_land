@@ -172,9 +172,6 @@ TARGET_KERNEL_CLANG_VERSION := proton
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Lineage Hardware
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
 
