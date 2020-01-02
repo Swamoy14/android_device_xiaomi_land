@@ -221,10 +221,13 @@ PRODUCT_PACKAGES += \
 	android.hardware.gnss@1.1-service-qti \
     android.hardware.gnss@2.0-impl-qti \
     android.hardware.gnss@2.0-service-qti \
-    libbatching \
-    libgeofencing \
-    libgnss \
-    libwifi-hal-ctrl
+    gps.conf \
+	libloc_core \
+	libgnss \
+	liblocation_api \
+	libgps.utils \
+	libbatching \
+	libgeofencing
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
