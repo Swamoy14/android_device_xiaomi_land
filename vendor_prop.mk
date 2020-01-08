@@ -42,10 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bluetooth.modem_nv_support=true \
     persist.vendor.bt.enable.splita2dp=false \
     vendor.qcom.bluetooth.soc=smd \
-    persist.bluetooth.bluetooth_audio_hal.disabled=true \
-    bluetooth.hfp.client=1 \
-    ro.bluetooth.hfp.ver=1.7 \
-    ro.qualcomm.bt.hci_transport=smd
+    persist.bluetooth.bluetooth_audio_hal.disabled=true
     
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
