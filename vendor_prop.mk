@@ -114,6 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.vidc.enc.narrow.searchrange=1 \
     vendor.video.disable.ubwc=1
+    mm.sec.enable.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -161,7 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVVERIDES += \
 ro.vendor.extension_library=libqti-perfd-client.so \
-ro.vendor.qti.sys.fw.bg_apps_limit=60 
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Optimize
 PRODUCT_PROPERTY_OVERRIDES += \
