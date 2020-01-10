@@ -129,7 +129,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
-    persist.vendor.data.mode=concurrent
+    persist.vendor.data.mode=concurrent \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -177,3 +178,10 @@ ro.config.dha_lmk_scale=0.545 \
 ro.config.dha_th_rate=2.3 \
 ro.config.sdha_apps_bg_max=64 \
 ro.config.sdha_apps_bg_min=8
+
+# SurfaceFlinger
+ro.surface_flinger.protected_contents=true
+ro.surface_flinger.use_smart_90_for_video=true
+ro.surface_flinger.set_display_power_timer_ms=10000
+ro.surface_flinger.set_touch_timer_ms=5000
+ro.surface_flinger.set_idle_timer_ms=9000
