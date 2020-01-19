@@ -122,7 +122,7 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-	# Vibration
+    # Vibration
     chown root system /sys/class/timed_output/vibrator/vtg_level
     chmod 0660 /sys/class/timed_output/vibrator/vtg_level
 
@@ -141,7 +141,7 @@ on boot
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
-
+    
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
 
@@ -253,6 +253,10 @@ on boot
     chown system system /sys/class/sensors/apds9930-proximity/enable
     chown system system /sys/class/sensors/apds9930-proximity/poll_delay
 
+    # Fix permission to set cpu5 and cpu6 online
+    chmod 644 /sys/devices/system/cpu/cpu5/online
+    chmod 644 /sys/devices/system/cpu/cpu6/online
+
     # Create directory used for display
     # for backward compatibility
     mkdir /persist/display 0770 system graphics
@@ -264,6 +268,10 @@ on boot
 
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
+
+    # Double Tap To Wake
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 660 /sys/android_touch/doubletap2wake
 
     #sensors log dir
     mkdir /data/vendor/sensors

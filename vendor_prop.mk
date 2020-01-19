@@ -42,7 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bluetooth.modem_nv_support=true \
     persist.vendor.bt.enable.splita2dp=false \
     vendor.qcom.bluetooth.soc=smd
-    
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
@@ -112,7 +112,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-	debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0 \
     media.msm8956hw=0 \
     mm.enable.smoothstreaming=true \
@@ -200,7 +200,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # SdcardFs
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
-    
+
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
