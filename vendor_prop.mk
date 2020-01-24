@@ -144,8 +144,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.empty_app_percent=50 \
     ro.vendor.qti.sys.fw.trim_empty_percent=100 \
     ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648 \
-    pm.sleep_mode=1
+    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648 
 
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -190,3 +189,8 @@ ro.surface_flinger.set_idle_timer_ms=9000
 
 # Sim Selection Fix
 persist.vendor.radio.aosp_usr_pref_sel=true
+
+# Configstore
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+ro.surface_flinger.max_virtual_display_dimension=4096 \
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
