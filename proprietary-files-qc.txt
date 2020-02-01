@@ -96,28 +96,28 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|cbc75b554051298020506d85427a1aa7034
 vendor/lib64/vendor.qti.latency@2.0.so|15e50ce40e210993343406947dd2c959920f40c8
 
 # DPM - from jasmine_sprout QKQ1.190910.002/V11.0.5.0.QDIMIXM
-framework/tcmclient.jar|a55e6981795bf74b3249c5e7297ea4e3cf1dea83 
-product/bin/dpmd|49caa8e7d8af8055efdd7ebc0d7f7d67bc600041 
-product/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5 
-product/etc/init/dpmd.rc|7f95195a89fddce06b93006a737701270e91f669 
-product/etc/permissions/com.qti.dpmframework.xml|4613f8b8629d0b823e6aaab45d399ac30da06c09 
-product/etc/permissions/dpmapi.xml|0991b3069308620cfcad53873e9f09af181b981d 
-product/framework/com.qti.dpmframework.jar|e39a7e06af2d1e95a3724c19c36b8716277f53a1 
-product/framework/dpmapi.jar|4696df9793ad676b305d53b5d7ce65ecf74771ad 
-product/lib/com.qualcomm.qti.dpm.api@1.0.so|a7a317a7299515fc0489bb1709a021c1dc1c4f17 
-product/lib/libdpmctmgr.so|778e8076dbf0340ada0bb479a4f9e870fa3fd6f7 
-product/lib/libdpmfdmgr.so|accb9e66e7ee7769f0b8fa6add80dc8d4a048982 
-product/lib/libdpmframework.so|383682a3e13d482a2eee0fa16963a70c14b7c034 
-product/lib/libdpmtcm.so|5e1ab5a20f4b5896194e085677f5a063d8276890 
-product/lib64/com.qualcomm.qti.dpm.api@1.0.so|a763bb1bbeecb84723bff6f547a3b23fab68dee3 
-product/lib64/libdpmctmgr.so|3d4b87a4937caf3a8d276f48a4f0dc2cad246c5b 
-product/lib64/libdpmfdmgr.so|e809155312a05d83b323ab0be64cb393d936e52a 
-product/lib64/libdpmframework.so|8fd037eb8740a468a67c78e7fa01c69b1ba3fd2a 
-product/lib64/libdpmtcm.so|71a3d624602807f6fa6cbdb3a489efe9e93de634 
--product/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319 
-vendor/bin/dpmQmiMgr|d536096b310a2d3f30a683c1bdcad8658db1ba52 
-vendor/lib/com.qualcomm.qti.dpm.api@1.0.so|66df5946aa3fc70d87fa67dc4ffb261e2a0096a3 
-vendor/lib/libdpmqmihal.so|4c49409f2f18bcd12e837b6b850b06e3d93e45eb 
+framework/tcmclient.jar|a55e6981795bf74b3249c5e7297ea4e3cf1dea83
+product/bin/dpmd|49caa8e7d8af8055efdd7ebc0d7f7d67bc600041
+product/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
+product/etc/init/dpmd.rc|7f95195a89fddce06b93006a737701270e91f669
+product/etc/permissions/com.qti.dpmframework.xml|4613f8b8629d0b823e6aaab45d399ac30da06c09
+product/etc/permissions/dpmapi.xml|0991b3069308620cfcad53873e9f09af181b981d
+product/framework/com.qti.dpmframework.jar|e39a7e06af2d1e95a3724c19c36b8716277f53a1
+product/framework/dpmapi.jar|4696df9793ad676b305d53b5d7ce65ecf74771ad
+product/lib/com.qualcomm.qti.dpm.api@1.0.so|a7a317a7299515fc0489bb1709a021c1dc1c4f17
+product/lib/libdpmctmgr.so|778e8076dbf0340ada0bb479a4f9e870fa3fd6f7
+product/lib/libdpmfdmgr.so|accb9e66e7ee7769f0b8fa6add80dc8d4a048982
+product/lib/libdpmframework.so|383682a3e13d482a2eee0fa16963a70c14b7c034
+product/lib/libdpmtcm.so|5e1ab5a20f4b5896194e085677f5a063d8276890
+product/lib64/com.qualcomm.qti.dpm.api@1.0.so|a763bb1bbeecb84723bff6f547a3b23fab68dee3
+product/lib64/libdpmctmgr.so|3d4b87a4937caf3a8d276f48a4f0dc2cad246c5b
+product/lib64/libdpmfdmgr.so|e809155312a05d83b323ab0be64cb393d936e52a
+product/lib64/libdpmframework.so|8fd037eb8740a468a67c78e7fa01c69b1ba3fd2a
+product/lib64/libdpmtcm.so|71a3d624602807f6fa6cbdb3a489efe9e93de634
+-product/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
+vendor/bin/dpmQmiMgr|d536096b310a2d3f30a683c1bdcad8658db1ba52
+vendor/lib/com.qualcomm.qti.dpm.api@1.0.so|66df5946aa3fc70d87fa67dc4ffb261e2a0096a3
+vendor/lib/libdpmqmihal.so|4c49409f2f18bcd12e837b6b850b06e3d93e45eb
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|fbff6357ee46dd6d62f490a942ff567b6ce955d1
 vendor/lib64/libdpmqmihal.so|30a170684219dd589d05ce5b446e73b7501f13e3
 
@@ -218,9 +218,9 @@ vendor/lib64/libsdm-diag.so|7ab5d2a980029ac9bd20fe68656823b21e483e11
 vendor/lib64/libsdmextension.so|e91aaf852df780e42bb083c3089f5b42c87c49f7
 vendor/lib64/libtinyxml2_1.so|b743b93bbb47bb2d80322fcfb985b7b8c696fa1b
 
-# Graphics (Vulkan) - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
-vendor/lib/hw/vulkan.msm8953.so:vendor/lib/hw/vulkan.msm8937.so|6259874ee4fe1a414b5e2109ec63af55a70d3733
-vendor/lib64/hw/vulkan.msm8953.so:vendor/lib64/hw/vulkan.msm8937.so|e1905916771354829868a65e6757615c7de20b71
+# Graphics (Vulkan) - from LA.UM.8.6.r1-01900-89xx.0
+vendor/lib/hw/vulkan.msm8937.so|37d502dcc1c6f1d855e245faa0fe1fd7cb888139
+vendor/lib64/hw/vulkan.msm8937.so|f33b81f52921a9498cd6bc2b8b3a8a463ab084fa
 
 # Graphics firmware - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
@@ -281,27 +281,27 @@ vendor/lib/libsmwrapper.so|58dcf09adcbe6c851417e1569a120ac2e5e64a9d
 
 # Media - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 lib/extractors/libmmparser.so|6c50c5d01ceff647de389f3f15b1952c2bcdd2d7
-lib/libFileMux.so|5961dd16c9c6808e8321abf4b0266a9926ef327b
-lib/libmmosal.so|89a3c4404de99e9ee740aeea1883c15470d61a74
-lib/libmmparser_lite.so|db9e6dafd466fd0aa3b2d7b387fda38ee9838a08
-lib/libOmxMux.so|6aff8e6e81331f3d5d3a8d46d342e5b5efc237f3
-lib64/libmmosal.so|3d50c7ea56db9c3676be9d6e36e1030386ecdb02
-vendor/lib/libgpustats.so|83d8856717923ab389aecf17445e33fc21b90afc
-vendor/lib/libmmosal_proprietary.so|51d9cbf713f06e07d3f8aa65640f7251e9b3a808
-vendor/lib/libOmxAacDec.so|feacef5e0d1e68a54d9fe6a78ee52f4490696f3d
-vendor/lib/libOmxAlacDec.so|e74385d700fe898b0075cd0742fc7db162564a50
-vendor/lib/libOmxAlacDecSw.so|3b4ef8fd510e91df8c440447c03a8a42bac23752
-vendor/lib/libOmxAmrDec.so|5b399fa755cf9d7722ffd7225fe6f23dfc182185
-vendor/lib/libOmxAmrwbplusDec.so|23cc041078de2ca4a6a44e8eb756b74df0a3b1ca
-vendor/lib/libOmxApeDec.so|2f3cb8de2efb00c93688b86f1b55e96de3752b4b
-vendor/lib/libOmxApeDecSw.so|5a8bbc06b9cf680f1c5012660c82f37331559f77
-vendor/lib/libOmxEvrcDec.so|6a50e069ae8b769c7c97bf0398557112d105b183
-vendor/lib/libOmxQcelp13Dec.so|c094a365bd872d93e553d50fd65dc3d93ef1f486
+lib/libFileMux.so|79661e6dffc90234ad446641264fd0fa1a3fe6ab
+lib/libmmosal.so|9464733295e192301b2577f52fab720e72c0d152
+lib/libmmparser_lite.so|b1b4161b7097f5feeff0f043e8b94cd94553e4ad
+lib/libOmxMux.so|1ad1aa835a3dfb8bfea2a29291f82a173ba6a868
+lib64/libmmosal.so|9ceff2581e86d32bc2795dffb96ebe4bdc88f2f7
+vendor/lib/libgpustats.so|51338b96a0a61b1062a11723c86faba3c1f1d58e
+vendor/lib/libmmosal_proprietary.so|a339e7b1dcf86fbb3ee3262ebb15d93cbd5a1916
+vendor/lib/libOmxAacDec.so|2693bce6d624a008b7d4417f625ee363808762c1
+vendor/lib/libOmxAlacDec.so|a1562f6e7319339f1a3c2164d7929a58d14d355c
+vendor/lib/libOmxAlacDecSw.so|195745033c16f74745ef7fb73834a1781618ff32
+vendor/lib/libOmxAmrDec.so|ffd66ca58bb0f083b8ba19f9114db08d4b3d38c1
+vendor/lib/libOmxAmrwbplusDec.so|0ad2fbab0051880fc4cfaa75685100a470af1467
+vendor/lib/libOmxApeDec.so|34f86d1617f9683a290642bd2452319dad50d431
+vendor/lib/libOmxApeDecSw.so|50681d86957d6a6adc71967e67b24e2114fbf1ab
+vendor/lib/libOmxEvrcDec.so|e16f0f94e91742f1aef16aad6f2438a12611a6b3
+vendor/lib/libOmxQcelp13Dec.so|2674324f46dfb77d2e586a04d380d6cea188e79e
 vendor/lib/libOmxVpp.so|0c37dd16995e08be116a3d560fb3465619de0940
-vendor/lib/libOmxWmaDec.so|015c01595f055fe92ba7210cb9a5bec4a38a06ee
+vendor/lib/libOmxWmaDec.so|469d6be621fab38ece0921c3f08e1638556cef0f
 vendor/lib/libvpplibrary.so|77d1d8d7fa879d1c5df1fb4e210de1e715bf139e
-vendor/lib/libvqzip.so|0b906db131e99cd5460b8a72d05e86721243de95
-vendor/lib64/libgpustats.so|35eaab728b21fe7cd33b821bf5cf13ea1117cd90
+vendor/lib/libvqzip.so|d037d6e54f6cff1755acb5e1f04a43536bcb8acf
+vendor/lib64/libgpustats.so|b7f9e1ee3f0d86e87d96db55404f3507db8cac6f
 
 # Media OMX - from TA-1025_00WW 8.1.0 OPR1.170623.026
 vendor/lib/libMpeg4SwEncoder.so|971eb18b4209287f7c078c082508ebc46c11de0e
