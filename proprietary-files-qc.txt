@@ -121,13 +121,13 @@ vendor/lib/libdpmqmihal.so|4c49409f2f18bcd12e837b6b850b06e3d93e45eb
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|fbff6357ee46dd6d62f490a942ff567b6ce955d1
 vendor/lib64/libdpmqmihal.so|30a170684219dd589d05ce5b446e73b7501f13e3
 
-# DRM and SEE - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
-vendor/bin/qseecomd|14eaa0752ac0eb2308708056d094a05d9e5129b8
-vendor/lib64/libQSEEComAPI.so|1e695dcc9197c685c294d426822d2cb4e4c9c592
-vendor/lib64/libdrmfs.so|e20cc71ac84a7998626e600f4dd9dfe356a1436a
-vendor/lib64/libdrmtime.so|4efeb1449809aa172e68fe5bf5aa68be0f21387d
-vendor/lib64/librpmb.so|ba775205529284dc5d2233f11462037538f763af
-vendor/lib64/libssd.so|0e988e6ef7b1d356f4b92a26a61b96a840de1d20
+# DRM and SEE - from LA.UM.8.6.r1-01900-89xx.0
+vendor/bin/qseecomd|d79a4cb59568c96051538d34bce08030ff74460e
+vendor/lib64/libQSEEComAPI.so|fb7be96182999587d97a036495053a3ebb4c3198
+vendor/lib64/libdrmfs.so|e11b8e8bf02bdc2ea817e59800d8945ee2a24460
+vendor/lib64/libdrmtime.so|a15a6f30d4e1f11025a3d947991fe54e4c4a9178
+vendor/lib64/librpmb.so|001098ad903adc4d17d609b7afa044a2aa86aa16
+vendor/lib64/libssd.so|c7f2ddb2e47d1a3d03ed04e15a883b3ecb8e0b70
 
 # Gatekeeper - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8937.so|c1b386547234815a0d6116b5e4756de66075cd3f
