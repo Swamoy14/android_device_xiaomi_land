@@ -122,7 +122,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable_pframes=1 \
     vendor.vidc.enc.disable.pq=true \
     vendor.vidc.enc.narrow.searchrange=1 \
-    vendor.video.disable.ubwc=1
+    vendor.video.disable.ubwc=1 \
+    debug.media.codec2=2 
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -147,7 +148,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.empty_app_percent=50 \
     ro.vendor.qti.sys.fw.trim_empty_percent=100 \
     ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648 
+    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
