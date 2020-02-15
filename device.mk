@@ -63,11 +63,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 # whitelisted app
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-com.qualcomm.location.xml:system/etc/permissions/privapp-permissions-com.qualcomm.location.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
 # Additional native libraries
@@ -77,6 +79,10 @@ PRODUCT_COPY_FILES += \
 # ANT
 PRODUCT_PACKAGES += \
     AntHalService
+
+# WiFi
+PRODUCT_PACKAGES += \
+    libwifi-hal-ctrl
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -117,17 +123,11 @@ PRODUCT_COPY_FILES += \
 # XML Audio configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0_vendor \
     camera.msm8937 \
     GCam
-
+    
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
 
 # Charger
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
+
+# CarrierConfig
+PRODUCT_PACKAGES += \
+    CarrierConfig
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -171,7 +175,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
@@ -182,6 +186,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml \
     $(LOCAL_PATH)/configs/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml \
     $(LOCAL_PATH)/configs/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+   XiaomiParts
+
+# XiaomiDoze
+PRODUCT_PACKAGES += \
+   XiaomiDoze
+
+# Updater
+PRODUCT_PACKAGES += \
+    Updater
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -199,6 +215,10 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# Fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
+
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
@@ -206,20 +226,15 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.0-impl-qti \
-    android.hardware.gnss@2.0-service-qti \
-    libbatching \
-    libgeofencing \
-    libgnss \
     libwifi-hal-ctrl
-
+    
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
-    $(LOCAL_PATH)/gps/etc/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
-    $(LOCAL_PATH)/gps/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
-    $(LOCAL_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
-    $(LOCAL_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
-    $(LOCAL_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
+    $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+    $(LOCAL_PATH)/configs/gps/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
+    $(LOCAL_PATH)/configs/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
+    $(LOCAL_PATH)/configs/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
 # Healthd
 PRODUCT_PACKAGES += \
@@ -255,6 +270,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qcom.sh \
     init.target.rc \
+    init.goodix.sh \
     fstab.qcom
 
 # Keylayout
@@ -294,7 +310,6 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
-    libOmxG711Enc \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
@@ -341,6 +356,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
     $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
+    $(LOCAL_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml \
     $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf \
     $(LOCAL_PATH)/configs/perf/targetconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetconfig.xml \
     $(LOCAL_PATH)/configs/perf/targetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetresourceconfigs.xml
@@ -401,6 +417,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.basic
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
@@ -409,10 +429,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -461,14 +477,6 @@ PRODUCT_BOOT_JARS += \
 # Wallpapers
 PRODUCT_PACKAGES += \
     PixelLiveWallpaperPrebuilt
-    
-# XiaomiDoze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
-    
-# XiaomiParts
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -477,3 +485,4 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
+#$(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)

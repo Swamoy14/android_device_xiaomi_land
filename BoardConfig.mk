@@ -47,13 +47,13 @@ TARGET_NO_BOOTLOADER 		:= true
 # kernel
 BOARD_KERNEL_BASE		:= 0x80000000
 BOARD_KERNEL_CMDLINE 		:= androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 androidboot.usbconfigfs=false loop.max_part=7
-BOARD_KERNEL_CMDLINE 		+= androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME 	:= Image.gz-dtb
 BOARD_KERNEL_PAGESIZE 		:=  2048
 BOARD_MKBOOTIMG_ARGS 		:= --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100
 TARGET_KERNEL_CONFIG 		:= land_defconfig
 TARGET_KERNEL_SOURCE 		:= kernel/xiaomi/msm8937
 TARGET_EXFAT_DRIVER		:= sdfat
+
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -146,6 +146,7 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -153,6 +154,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
+
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
@@ -175,9 +179,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := true
 USE_DEVICE_SPECIFIC_GPS := true
-LOC_HIDL_VERSION := 3.0
+TARGET_NO_RPC := true
 
 # HIDL
+#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
@@ -229,11 +234,9 @@ TARGET_RECOVERY_FSTAB 		 := $(DEVICE_PATH)/rootdir/fstab.qcom
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
-
-# SurfaceFlinger
-TARGET_USE_AOSP_SURFACEFLINGER := true
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 #Treble
 ENABLE_VENDOR_IMAGE := true

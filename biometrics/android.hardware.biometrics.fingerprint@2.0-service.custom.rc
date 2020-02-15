@@ -34,18 +34,9 @@ on boot
     # Goodix Fingerprint
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
-
-    setprop persist.sys.fp.vendor none
-    start vendor.gx_fpd
-
-on property:persist.sys.fp.vendor=switchf
+    setprop persist.sys.fp.vendor switchf
     stop vendor.gx_fpd
     setprop persist.sys.fp.vendor searchf
     setprop ro.hardware.fingerprint searchf
     setprop ro.boot.fpsensor fpc
-    start vendor.fps_hal
-
-on property:persist.sys.fp.onstart=1
-    setprop ro.hardware.fingerprint goodix
-    setprop ro.boot.fpsensor gdx
     start vendor.fps_hal
