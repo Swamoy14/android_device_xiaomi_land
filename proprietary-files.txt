@@ -1,9 +1,9 @@
 # Audio
-vendor/etc/diracmobile.config
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
 
 # Audio (Dirac) - from gemini (Mi 5)
+vendor/etc/diracmobile.config
 vendor/lib/rfsa/adsp/libdirac-appi.so
 vendor/lib/soundfx/libdirac.so
 vendor/lib64/soundfx/libdirac.so
