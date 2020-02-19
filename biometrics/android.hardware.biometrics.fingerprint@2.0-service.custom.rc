@@ -1,4 +1,4 @@
-service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.land
+service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.0-service.custom
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
@@ -34,21 +34,9 @@ on boot
     # Goodix Fingerprint
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
-
-service goodix_script /vendor/bin/init.goodix.sh
-    class late_start
-    user root
-    oneshot
-
-on property:persist.sys.fp.vendor=searchf
-    setprop persist.sys.fp.goodix 0
-    setprop persist.sys.fp.onstart 0
+    setprop persist.sys.fp.vendor switchf
+    stop vendor.gx_fpd
+    setprop persist.sys.fp.vendor searchf
     setprop ro.hardware.fingerprint searchf
     setprop ro.boot.fpsensor fpc
-    start vendor.fps_hal
-    
-on property:persist.sys.fp.vendor=goodix
-    start vendor.gx_fpd
-    setprop ro.hardware.fingerprint goodix
-    setprop ro.boot.fpsensor gdx
     start vendor.fps_hal
