@@ -84,14 +84,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sdm.debug.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.disable_skip_validate=1 \
-    sys.display-size=1920x1080 \
-    persist.debug.wfd.enable=1 \
     persist.hwc.enable_vds=1 \
     debug.sdm.support_writeback=0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.location.osnlp.package=com.google.android.gms \
-    ro.location.osnlp.region.package=""
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -114,7 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=1 \
     persist.loc.nlp_name=com.qualcomm.location \
     ro.gps.agps_provider=1
-    
+
 # LMKD
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.low=1001 \
@@ -125,7 +119,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.downgrade_pressure=100 \
     ro.lmk.kill_heaviest_task=true \
     ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=tru
+    ro.lmk.use_minfree_levels=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -137,8 +131,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.narrow.searchrange=1 \
     vendor.vidc.disable.split.mode=1 \
     vendor.video.disable.ubwc=1 \
-    mm.sec.enable.smoothstreaming=true \
-    media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
+    media.settings.xml=/vendor/etc/media_profiles_V1_0.xml \
+    media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -200,8 +194,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     ril.subscription.types=NV,RUIM \
-    persist.vendor.data.mode=concurrent \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     rild.libargs=-d/dev/smd0 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
@@ -218,6 +210,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
 
+# SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
