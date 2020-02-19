@@ -210,8 +210,6 @@ set_speaker_light_locked(struct light_device_t* dev,
             blink = 2;
         else
             blink = 1;
-    } else if (state->flashMode == LIGHT_FLASH_HARDWARE) {
-        blink = 2;
     } else {
         blink = 0;
     }
