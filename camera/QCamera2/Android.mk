@@ -83,8 +83,8 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/util \
         $(LOCAL_PATH)/HAL3 \
         hardware/libhardware/include/hardware \
-        $(call project-path-for,qcom-media)/libstagefrighthw \
-        $(call project-path-for,qcom-media)/mm-core/inc \
+        hardware/qcom/media-caf/msm8996/libstagefrighthw \
+        hardware/qcom/media-caf/msm8996/mm-core/inc \
         system/core/include/cutils \
         system/core/include/system \
         system/media/camera/include/system
@@ -111,12 +111,12 @@ endif
 LOCAL_C_INCLUDES += \
         $(TARGET_OUT_HEADERS)/qcom/display
 LOCAL_C_INCLUDES += \
-        $(call project-path-for,qcom-display)/libqservice
+        hardware/qcom/display-caf/msm8996/libqservice
 LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 LOCAL_SHARED_LIBRARIES += libhidlbase libhwbinder
-LOCAL_SHARED_LIBRARIES += android.hardware.power@1.2
+LOCAL_SHARED_LIBRARIES += android.hardware.power@1.1
 ifeq ($(USE_DISPLAY_SERVICE),true)
 LOCAL_SHARED_LIBRARIES += android.frameworks.displayservice@1.0 libhidltransport
 else
