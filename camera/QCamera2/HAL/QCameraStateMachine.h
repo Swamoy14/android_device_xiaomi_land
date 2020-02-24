@@ -260,7 +260,6 @@ private:
 
     bool m_bDisplayFrame;
     bool m_bPreviewCallbackNeeded;
-    bool m_bPreviewRestartedInternal;
 };
 
 }; // namespace qcamera

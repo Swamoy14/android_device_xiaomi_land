@@ -25,14 +25,7 @@ LOCAL_SRC_FILES += \
         HAL3/QCamera3CropRegionMapper.cpp \
         HAL3/QCamera3StreamMem.cpp
 
-LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable
-
 #HAL 1.0 source
-
-ifeq ($(TARGET_SUPPORT_HAL1),false)
-LOCAL_CFLAGS += -DQCAMERA_HAL3_SUPPORT
-else
-LOCAL_CFLAGS += -DQCAMERA_HAL1_SUPPORT
 LOCAL_SRC_FILES += \
         HAL/QCamera2HWI.cpp \
         HAL/QCameraMuxer.cpp \
@@ -45,16 +38,11 @@ LOCAL_SRC_FILES += \
         HAL/QCameraParameters.cpp \
         HAL/QCameraParametersIntf.cpp \
         HAL/QCameraThermalAdapter.cpp
-endif
 
-# Suppress warnings until they are fixed in QCamera2HWI.cpp.
-LOCAL_CFLAGS += -Wno-implicit-fallthrough
+LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable -Wno-implicit-fallthrough
 
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
-
-# Kernel headers
-LOCAL_CFLAGS += -DCONFIG_MACH_XIAOMI_MSM8937 -DCONFIG_MACH_XIAOMI_LAND
 
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS -D_ANDROID
 
@@ -66,7 +54,7 @@ endif
 
 #USE_DISPLAY_SERVICE from Android O onwards
 #to receive vsync event from display
-ifeq ($(call is-platform-sdk-version-at-least,26),true)
+ifeq ($(filter OMR1 O 8.1.0, $(PLATFORM_VERSION)), )
 USE_DISPLAY_SERVICE := true
 LOCAL_CFLAGS += -DUSE_DISPLAY_SERVICE
 endif
@@ -93,8 +81,10 @@ LOCAL_C_INCLUDES := \
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/HAL
 
+ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+endif
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_CFLAGS += -DTARGET_TS_MAKEUP
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/HAL/tsMakeuplib/include
@@ -115,10 +105,8 @@ LOCAL_C_INCLUDES += \
 LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
-LOCAL_SHARED_LIBRARIES += libhidlbase libhwbinder
-LOCAL_SHARED_LIBRARIES += android.hardware.power@1.2
 ifeq ($(USE_DISPLAY_SERVICE),true)
-LOCAL_SHARED_LIBRARIES += android.frameworks.displayservice@1.0 libhidltransport
+LOCAL_SHARED_LIBRARIES += android.frameworks.displayservice@1.0 libhidlbase libhidltransport
 else
 LOCAL_SHARED_LIBRARIES += libgui
 endif

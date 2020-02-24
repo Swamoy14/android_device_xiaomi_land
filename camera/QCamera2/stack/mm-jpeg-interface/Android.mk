@@ -49,9 +49,6 @@ endif
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
-# Kernel headers
-LOCAL_CFLAGS += -DCONFIG_MACH_XIAOMI_MSM8937 -DCONFIG_MACH_XIAOMI_LAND
-
 LOCAL_SRC_FILES := \
     src/mm_jpeg_queue.c \
     src/mm_jpeg_exif.c \
@@ -63,7 +60,6 @@ LOCAL_SRC_FILES := \
     src/mm_jpeg_mpo_composer.c
 
 LOCAL_MODULE           := libmmjpeg_interface
-LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core libmmcamera_interface libutils
 LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
