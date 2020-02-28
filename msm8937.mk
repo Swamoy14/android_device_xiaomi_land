@@ -450,7 +450,8 @@ $(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-ve
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    XiaomiParts \
+    XiaomiAddon
 
 # Perf
 -include vendor/qcom/common/perf/qti-perf.mk
