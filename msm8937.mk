@@ -428,6 +428,7 @@ PRODUCT_BOOT_JARS += \
    WfdCommon
 
 PRODUCT_PACKAGES += \
+    libaacwrapper \
     libnl
 
 # Inherit common proprietary files
