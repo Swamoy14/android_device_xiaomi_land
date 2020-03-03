@@ -39,9 +39,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    bluetooth.hfp.client=1 \
-    vendor.qcom.bluetooth.soc=smd \
-    ro.bluetooth.hfp.ver=1.7
+    persist.vendor.bluetooth.modem_nv_support=true \
+    persist.vendor.bt.enable.splita2dp=false \
+    vendor.qcom.bluetooth.soc=smd
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -73,7 +73,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
-    debug.sf.enable_gl_backpressure=1 \
     debug.egl.hw=0 \
     persist.hwc.mdpcomp.enable=true \
     debug.mdpcomp.logs=0 \
