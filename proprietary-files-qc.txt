@@ -340,6 +340,8 @@ vendor/lib/libqti-perfd-client.so|eb81a99bab35f29b7977bde878ea2a29e2abe18c
 vendor/lib/libqti-util.so|da7cfbe08e99dfa77fb29f06878b5d676af40d09
 vendor/lib/vendor.qti.hardware.perf@1.0.so|b4969fa797d1957ad8f35d4f84615608f0e9cc2e
 vendor/lib/vendor.qti.hardware.perf@2.0.so|71592601eed5e022f4979293d68deb98e688a3d4
+lib/libqti-perfd-client_system.so|9d1ff7e85721ee30029f872a29a69e7ca4e68021
+lib64/libqti-perfd-client_system.so|de5b61f07d7981bb208167b357f46a9ad083c9e7
 
 # Peripheral manager - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/bin/pm-proxy|56e9bdaa39270aa4456c9995a8a9e4618ba616a6
