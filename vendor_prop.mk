@@ -34,8 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.dolby.ds2.hardbypass=true \
     vendor.audio.hw.aac.encoder=true \
     vendor.audio.flac.sw.decoder.24bit=true \
-    ro.config.vc_call_vol_steps=8 \
-    ro.config.media_vol_steps=20
+    ro.config.vc_call_vol_steps=14 \
+    ro.config.media_vol_steps=30
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
