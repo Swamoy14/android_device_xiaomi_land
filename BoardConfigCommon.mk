@@ -205,5 +205,3 @@ WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 # Inherit the common proprietary files
 -include vendor/xiaomi/msm8937-common/BoardConfigVendor.mk
 
-# SurfaceFlinger
-TARGET_USE_AOSP_SURFACEFLINGER := true

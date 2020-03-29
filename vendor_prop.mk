@@ -116,10 +116,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.narrow.searchrange=1 \
     vendor.video.disable.ubwc=1
 
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
@@ -167,33 +163,19 @@ ro.vendor.qti.sys.fw.bg_apps_limit=60
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=1
 
-# Memory management tweaks
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.config.fha_enable=true \
-ro.sys.fw.bg_apps_limit=32 \
-ro.config.dha_cached_max=16 \
-ro.config.dha_empty_max=42 \
-ro.config.dha_empty_init=32 \
-ro.config.dha_lmk_scale=0.545 \
-ro.config.dha_th_rate=2.3 \
-ro.config.sdha_apps_bg_max=64 \
-ro.config.sdha_apps_bg_min=8
-
-# SurfaceFlinger
-ro.surface_flinger.protected_contents=true
-ro.surface_flinger.use_smart_90_for_video=true
-ro.surface_flinger.set_display_power_timer_ms=10000
-ro.surface_flinger.set_touch_timer_ms=5000
-ro.surface_flinger.set_idle_timer_ms=9000
-
 # Sim Selection Fix
 persist.vendor.radio.aosp_usr_pref_sel=true
 
 # Configstore
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-ro.surface_flinger.max_virtual_display_dimension=4096 \
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_virtual_display_dimension=4096 
 
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
 
+# SurfaceFlinger
+PRODUCT_PROPERTY_OVERRIDES += \
+debug.sf.early_phase_offset_ns=1500000 \
+debug.sf.early_app_phase_offset_ns=1500000 \
+debug.sf.early_gl_phase_offset_ns=3000000 \
+debug.sf.early_gl_app_phase_offset_ns=15000000

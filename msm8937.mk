@@ -17,9 +17,6 @@
 
 VENDOR_PATH := device/xiaomi/msm8937-common
 
-# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(VENDOR_PATH)/overlay \
@@ -45,10 +42,6 @@ TARGET_SCREEN_WIDTH := 720
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# Ambient display
-PRODUCT_PACKAGES += \
-    XiaomiDoze
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -382,10 +375,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
