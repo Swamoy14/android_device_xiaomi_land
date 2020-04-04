@@ -31,6 +31,7 @@ import androidx.preference.PreferenceCategory;
 import android.content.Context;
 import android.util.Log;
 
+import com.xiaomi.addon.FPSInfoService;
 import com.xiaomi.addon.kcal.KCalSettingsActivity;
 import com.xiaomi.addon.preferences.CustomSeekBarPreference;
 import com.xiaomi.addon.preferences.SecureSettingListPreference;
@@ -51,6 +52,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
+    public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     public static final String PREF_SPECTRUM = "spectrum";
     public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
@@ -125,6 +127,10 @@ public class DeviceSettings extends PreferenceFragment implements
         mSelinuxPersistence.setChecked(getContext()
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
         .contains(PREF_SELINUX_MODE));
+
+        SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
+        fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
+        fpsInfo.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -151,6 +157,15 @@ public class DeviceSettings extends PreferenceFragment implements
 
                 break;
 
+            case PREF_KEY_FPS_INFO:
+                boolean enabled = (Boolean) value;
+                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
+                if (enabled) {
+                    this.getContext().startService(fpsinfo);
+                } else {
+                    this.getContext().stopService(fpsinfo);
+                }
+                break;
             default:
                 break;
         }

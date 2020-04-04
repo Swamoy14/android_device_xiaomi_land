@@ -4,6 +4,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
+    public void onReceive(Context context, Intent intent) {
  *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -29,6 +30,7 @@ import com.xiaomi.addon.preferences.VibratorCallStrengthPreference;
 import android.os.SELinux;
 import android.util.Log;
 import android.widget.Toast;
+import com.xiaomi.addon.FPSInfoService;
 
 import com.xiaomi.addon.R;
 
@@ -47,7 +49,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     private Context mContext;
 
     public void onReceive(Context context, Intent intent) {
-		
+
 		    mContext = context;
     ActivityManager activityManager =
             (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
@@ -132,6 +134,11 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_HUE, HUE_DEFAULT));
         }
 
+        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
+        if (enabled) {
+            context.startService(new Intent(context, FPSInfoService.class));
+        }
+
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_USB_FASTCHARGE, 0));
     }
@@ -139,6 +146,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     private void showToast(String toastString, Context context) {
     Toast.makeText(context, toastString, Toast.LENGTH_SHORT)
             .show();
+        
 	}
 
 }
