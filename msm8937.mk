@@ -93,6 +93,15 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
+
+PRODUCT_PACKAGES += \
+    libldacBT_dec \
+    liba2dpoffload
+
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
