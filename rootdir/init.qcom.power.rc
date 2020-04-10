@@ -27,16 +27,16 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu7/sched_mostly_idle_nr_run 10
 
     write /sys/devices/system/cpu/cpu4/sched_prefer_idle 1
-    write /sys/devices/system/cpu/cpu4/sched_prefer_idle 1
-    write /sys/devices/system/cpu/cpu4/sched_prefer_idle 1
-    write /sys/devices/system/cpu/cpu4/sched_prefer_idle 1
+    write /sys/devices/system/cpu/cpu5/sched_prefer_idle 1
+    write /sys/devices/system/cpu/cpu6/sched_prefer_idle 1
+    write /sys/devices/system/cpu/cpu7/sched_prefer_idle 1
 
     # HMP scheduler settings
     write /proc/sys/kernel/sched_window_stats_policy 2
     write /proc/sys/kernel/sched_ravg_hist_size 5
 
     # Set GPU idle freq & default gov
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor simple_ondemand
 
     # Enable core control
