@@ -113,6 +113,9 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libqdMetaData.system \
     libtinyxml \
+    libdisplayconfig.vendor \
+    libqdMetaData \
+    libqdMetaData.vendor \
     memtrack.msm8937
 
 PRODUCT_PACKAGES += \
@@ -237,7 +240,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     libandroid_net \
-    libnl \
     netutils-wrapper-1.0
 
 # OMX
@@ -415,6 +417,10 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_BOOT_JARS += \
    WfdCommon
+
+PRODUCT_PACKAGES += \
+    libnl \
+    libwfdaac
 
 # Inherit common proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)

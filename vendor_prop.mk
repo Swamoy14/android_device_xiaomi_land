@@ -101,8 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sdm.debug.disable_rotator_split=1 \
     vendor.display.disable_skip_validate=1 \
     sdm.debug.disable_skip_validate=1 \
-    sdm.perf_hint_window=50 \
-    sys.display-size=1920x1080
+    sdm.perf_hint_window=50
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -178,16 +177,7 @@ sys.use_fifo_ui=1
 # Sim Selection Fix
 persist.vendor.radio.aosp_usr_pref_sel=true
 
-# Configstore
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-ro.surface_flinger.max_virtual_display_dimension=4096 
-
-# Netflix
-ro.netflix.bsp_rev=Q660-13149-1
-
-# SurfaceFlinger
+# SurfaceFlinger sensor props
 PRODUCT_PROPERTY_OVERRIDES += \
-debug.sf.early_phase_offset_ns=1500000 \
-debug.sf.early_app_phase_offset_ns=1500000 \
-debug.sf.early_gl_phase_offset_ns=3000000 \
-debug.sf.early_gl_app_phase_offset_ns=15000000
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+
