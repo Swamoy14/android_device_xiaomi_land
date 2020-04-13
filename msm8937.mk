@@ -348,8 +348,7 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.qcom.rc \
-    init.safailnet.rc
+    ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
