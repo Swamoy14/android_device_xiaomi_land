@@ -170,6 +170,7 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # FM
 BOARD_HAVE_QCOM_FM                 := true
+TARGET_QCOM_NO_FM_FIRMWARE         := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs

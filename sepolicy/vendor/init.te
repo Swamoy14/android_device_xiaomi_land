@@ -21,3 +21,5 @@ allow init netutils_wrapper_exec:file x_file_perms;
 allow init hal_perf_hwservice:hwservice_manager find;
 allow init sysfs_battery_supply:file setattr;
 allow init hal_perf_default:binder call;
+allow qti_init_shell { fm_prop }:property_service set;
+
