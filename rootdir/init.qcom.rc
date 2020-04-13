@@ -127,26 +127,6 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-   # Vibration
-    chown root system /sys/class/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
-
-    # KCal
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_cont
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_enable
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_hue
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_sat
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_val
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_min
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
-    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
-
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
 
@@ -244,6 +224,10 @@ on boot
 
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
+
+    # Double Tap To Wake
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 660 /sys/android_touch/doubletap2wake
 
     #sensors log dir
     mkdir /data/vendor/sensors
@@ -856,6 +840,14 @@ service battery_monitor /system/bin/battery_monitor
 service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     user radio
+    disable
+    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
+service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
+    class main
+    user radio
+    disabled
     group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
@@ -1070,8 +1062,3 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     interface android.hardware.audio@5.0::IDevicesFactory default
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
-
-service goodix_script /vendor/bin/init.goodix.sh
-    class late_start
-    user root
-    oneshot
