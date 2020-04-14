@@ -127,6 +127,9 @@ on boot
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
+    #Create IOP  deamon related dirs
+    mkdir /data/vendor/iop 0700 root system
+
     # enable camera read sensors data
     setprop persist.camera.gyro.disable 0
 
@@ -300,6 +303,14 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
+
+service iop /system/vendor/bin/iop
+    class main
+    user root
+    group root
+    disabled
+    socket iop seqpacket 0666 root system
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
