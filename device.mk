@@ -71,13 +71,11 @@ TARGET_SCREEN_WIDTH := 720
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0_vendor \
     camera.msm8937 \
+    libmm-qcamera \
+    mm-qcamera-app \
     GCam
     
 # Configstore
@@ -183,12 +181,15 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager
+    com.android.ims.rcsmanager \
+    ims-ext-common \
+    ims_ext_common.xml
 
 # Init scripts ramdisk
 PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \
     init.recovery.qcom.rc \
+    init.class_main.sh \
     init.qcom.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
@@ -354,7 +355,11 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
+    android.hardware.radio@1.3 \
+    android.hardware.radio@1.4 \
     android.hardware.radio.config@1.0 \
+    android.hardware.radio.config@1.1 \
+    android.hardware.radio.config@1.2 \
     android.hardware.secure_element@1.0 \
     libcnefeatureconfig \
     librmnetctl \
@@ -382,8 +387,6 @@ PRODUCT_COPY_FILES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
