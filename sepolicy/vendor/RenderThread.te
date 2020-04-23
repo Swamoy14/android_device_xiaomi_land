@@ -1,4 +1,0 @@
-allow platform_app sysfs_kgsl:dir { read write open search remove_name add_name };
-allow platform_app sysfs_kgsl:lnk_file { write read open };
-allow system_app sysfs_kgsl:lnk_file { write read open };
-
