@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
+
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -251,7 +255,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     $(VENDOR_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(VENDOR_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(VENDOR_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+    $(VENDOR_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(VENDOR_PATH)/configs/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(VENDOR_PATH)/configs/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
 
