@@ -185,11 +185,10 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 
-# Init scripts ramdisk
 PRODUCT_PACKAGES += \
+    init.class_main.sh \
     init.msm.usb.configfs.rc \
     init.recovery.qcom.rc \
-    init.class_main.sh \
     init.qcom.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
@@ -199,7 +198,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qcom.sh \
     init.target.rc \
-    init.goodix.sh \
     fstab.qcom
     
 # IRQ
