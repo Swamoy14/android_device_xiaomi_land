@@ -198,6 +198,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qcom.sh \
     init.target.rc \
+    init.safailnet.rc \
     fstab.qcom
     
 # IRQ
