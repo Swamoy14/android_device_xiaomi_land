@@ -3,6 +3,7 @@ allow init gx_fpd_device:chr_file { write ioctl };
 allow init sysfs_devices_system_cpu:dir r_dir_perms;
 allow init sysfs:file setattr;
 allow init sysfs_leds:lnk_file read;
+allow init sysfs_msm_perf:file { open write };
 
 #FM
 allow qti_init_shell {
