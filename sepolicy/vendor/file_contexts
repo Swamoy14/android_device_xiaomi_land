@@ -42,6 +42,9 @@
 # Input
 /sys/board_properties/virtualkeys.*             u:object_r:touch_sysfs:s0
 
+# FPS Info
+/sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
+
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
 
