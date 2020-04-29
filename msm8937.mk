@@ -95,12 +95,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
-
-PRODUCT_PACKAGES += \
-    libldacBT_dec \
-    liba2dpoffload
+    libldacBT_dec
 
 # CNE
 PRODUCT_PACKAGES += \
