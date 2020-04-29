@@ -1,4 +1,4 @@
-type hal_fingerprint_msm8937, domain, binder_in_vendor_violators;
+type hal_fingerprint_land, domain, binder_in_vendor_violators;
 hal_server_domain(hal_fingerprint_land, hal_fingerprint)
 
 type hal_fingerprint_land_exec, exec_type, vendor_file_type, file_type;
