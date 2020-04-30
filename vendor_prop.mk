@@ -62,11 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.gyro.android=0 \
     persist.camera.HAL3.enabled=1 \
     persist.camera.is_type=1 \
-    vidc.enc.dcvs.extra-buff-count=2 \
-    persist.camera.imglib.cac3=2 \
-    camera.lowpower.record.enable=1 \
-    persist.camera.isp.clock.optmz=0 \
-    vendor.vidc.enc.narrow.searchrange=1
+    vidc.enc.dcvs.extra-buff-count=2
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
