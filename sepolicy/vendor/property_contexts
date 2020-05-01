@@ -1,3 +1,6 @@
+# Alarm
+ro.alarm_boot               u:object_r:vendor_alarm_boot_prop:s0
+
 # Spectrum
 persist.spectrum.profile    u:object_r:spectrum_prop:s0
 
