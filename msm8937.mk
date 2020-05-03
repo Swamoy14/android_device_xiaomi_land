@@ -114,9 +114,6 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libqdMetaData.system \
     libtinyxml \
-    libdisplayconfig.vendor \
-    libqdMetaData \
-    libqdMetaData.vendor \
     memtrack.msm8937
 
 PRODUCT_PACKAGES += \
@@ -435,8 +432,7 @@ PRODUCT_BOOT_JARS += \
    WfdCommon
 
 PRODUCT_PACKAGES += \
-    libnl \
-    libwfdaac
+    libnl
 
 # Inherit common proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)

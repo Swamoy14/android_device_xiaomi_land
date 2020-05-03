@@ -186,7 +186,8 @@ persist.vendor.radio.aosp_usr_pref_sel=true
 
 # SurfaceFlinger sensor props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_virtual_display_dimension=4096
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
