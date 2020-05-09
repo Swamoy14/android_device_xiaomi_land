@@ -58,7 +58,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.display.umax=1920x1080 \
     persist.vendor.camera.display.lmax=1280x720 \
-    vendor.camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
     persist.camera.gyro.android=0 \
     persist.camera.HAL3.enabled=1 \
@@ -68,6 +67,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
+
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpm.feature=0
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -137,7 +140,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.data.mode=concurrent \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true
+    persist.vendor.data.iwlan.enable=true \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     ro.telephony.use_old_mnc_mcc_format=true
 
 # Time Services
