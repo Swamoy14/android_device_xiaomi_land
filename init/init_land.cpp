@@ -57,5 +57,5 @@ void vendor_load_properties()
 {
     // fingerprint
     property_override("ro.build.description", "land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
 }
