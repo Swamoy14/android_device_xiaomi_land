@@ -423,8 +423,9 @@ service vendor.msm_irqbal_lb /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqba
 
 service time_daemon /vendor/bin/time_daemon
     class main
-    user root
-    group root
+    user system
+    group system
+    capabilities SYS_TIME
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
