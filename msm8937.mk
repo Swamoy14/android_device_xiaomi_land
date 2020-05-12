@@ -452,5 +452,3 @@ PRODUCT_PACKAGES += \
     XiaomiParts \
     XiaomiAddon
 
-# Perf
--include vendor/qcom/common/perf/qti-perf.mk
