@@ -402,3 +402,11 @@ PRODUCT_BOOT_JARS += \
 # Wallpapers
 PRODUCT_PACKAGES += \
     PixelLiveWallpaperPrebuilt
+
+# XiaomiDoze
+PRODUCT_PACKAGES += \
+   XiaomiDoze
+    
+# XiaomiParts
+PRODUCT_PACKAGES += \
+   XiaomiParts
