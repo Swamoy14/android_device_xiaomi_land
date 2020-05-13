@@ -1,5 +1,8 @@
 /*
-   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+   Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2017, The LineageOS Project
+   Copyright (c) 2018, The LineageOS Project
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -12,6 +15,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -25,37 +29,55 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <cstdlib>
+#include <fstream>
 #include <stdlib.h>
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
+#include <stdio.h>
+#include <string.h>
 
+#include <android-base/file.h>
 #include <android-base/properties.h>
-#include "property_service.h"
-#include "vendor_init.h"
 
+#include "init_msm8937.h"
+
+#include "vendor_init.h"
+#include "property_service.h"
+
+using android::base::GetProperty;
 using android::init::property_set;
 
-void property_override(char const prop[], char const value[])
+void init_target_properties()
 {
-    prop_info *pi;
+    std::ifstream fin;
+    std::string buf;
 
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-}
+    std::string product = GetProperty("ro.product.name", "");
+    if (product.find("land") == std::string::npos)
+        return;
 
-void property_override_dual(char const system_prop[], char const vendor_prop[],
-    char const value[])
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-}
+    fin.open("/proc/cmdline");
+    while (std::getline(fin, buf, ' '))
+        if (buf.find("board_id") != std::string::npos)
+            break;
+    fin.close();
 
-void vendor_load_properties()
-{
-    // fingerprint
-    property_override("ro.build.description", "land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
+    if (buf.find("S88537AA1") != std::string::npos) {
+        property_set("ro.build.display.wtid", "SW_S88537AA1_V105_M20_MP_XM");
+    } else if (buf.find("S88537AB1") != std::string::npos) {
+        property_set("ro.build.display.wtid", "SW_S88537AB1_V105_M20_MP_XM");
+    } else if (buf.find("S88537AC1") != std::string::npos) {
+        property_set("ro.build.display.wtid", "SW_S88537AC1_V105_M20_MP_XM");
+    } else if (buf.find("S88537BA1") != std::string::npos) {
+        property_set("ro.build.display.wtid", "SW_S88537BA1_V105_M20_MP_XM");
+    } else if (buf.find("S88537CA1") != std::string::npos) {
+        property_set("ro.build.display.wtid", "SW_S88537CA1_V105_M20_MP_XM");
+    } else if (buf.find("S88537EC1") != std::string::npos) {
+        property_set("ro.build.display.wtid", "SW_S88537EC1_V105_M20_MP_XM");
+    }
+
+    if (buf.find("S88537AB1") != std::string::npos) {
+        property_set("ro.product.model", "Redmi 3X");
+    } else {
+        property_set("ro.product.model", "Redmi 3S");
+    }
 }

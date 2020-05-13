@@ -738,9 +738,7 @@ void QCamera2HardwareInterface::synchronous_stream_cb_routine(
     // Otherwise, mBootToMonoTimestampOffset value will be 0.
     frameTime = frameTime - pme->mBootToMonoTimestampOffset;
     // Calculate the future presentation time stamp for displaying frames at regular interval
-    /*if (pme->getRecordingHintValue() == true) {
-        mPreviewTimestamp = pme->mCameraDisplay.computePresentationTimeStamp(frameTime);
-    }*/
+    //mPreviewTimestamp = pme->mCameraDisplay.computePresentationTimeStamp(frameTime);
     stream->mStreamTimestamp = frameTime;
     memory = (QCameraGrallocMemory *)super_frame->bufs[0]->mem_info;
 
@@ -1950,7 +1948,6 @@ int32_t QCamera2HardwareInterface::updateMetadata(metadata_buffer_t *pMetaData)
     //rotation & device rotation
     uint32_t prmRotation = mParameters.getJpegRotation();
     cam_rotation_info_t rotation_info;
-    memset(&rotation_info, 0, sizeof(cam_rotation_info_t));
     if (prmRotation == 0) {
        rotation_info.rotation = ROTATE_0;
     } else if (prmRotation == 90) {

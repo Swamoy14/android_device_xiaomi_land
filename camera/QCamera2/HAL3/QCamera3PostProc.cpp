@@ -1155,10 +1155,6 @@ int32_t QCamera3PostProcessor::encodeFWKData(qcamera_hal3_jpeg_data_t *jpeg_job_
     }
 
     hal_obj = (QCamera3HardwareInterface*)m_parent->mUserData;
-    if (hal_obj == NULL) {
-        LOGE("hal_obj is NULL, Error");
-        return BAD_VALUE;
-    }
 
     if (mJpegClientHandle <= 0) {
         LOGE("Error: bug here, mJpegClientHandle is 0");
@@ -1340,14 +1336,10 @@ int32_t QCamera3PostProcessor::encodeData(qcamera_hal3_jpeg_data_t *jpeg_job_dat
     QCamera3HardwareInterface* hal_obj = NULL;
     mm_jpeg_debug_exif_params_t *exif_debug_params = NULL;
     if (m_parent != NULL) {
-        hal_obj = (QCamera3HardwareInterface*)m_parent->mUserData;
-        if (hal_obj == NULL) {
-            LOGE("hal_obj is NULL, Error");
-            return BAD_VALUE;
-        }
+       hal_obj = (QCamera3HardwareInterface*)m_parent->mUserData;
     } else {
-        LOGE("m_parent is NULL, Error");
-        return BAD_VALUE;
+       LOGE("m_parent is NULL, Error");
+       return BAD_VALUE;
     }
     bool needJpegRotation = false;
 
@@ -1877,7 +1869,7 @@ void *QCamera3PostProcessor::dataProcessRoutine(void *data)
                         } else if (pp_buffer == NULL) {
                             LOGE("failed to dequeue from m_inputPPQ");
                             ret = -1;
-                        } else if (pp_buffer != NULL){
+                        } else {
                             memset(pp_job, 0, sizeof(qcamera_hal3_pp_data_t));
                             pp_job->src_frame = pp_buffer->input;
                             pp_job->src_metadata = meta_buffer;
@@ -2728,7 +2720,6 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
             break;
         case EXIF_SHORT:
             {
-                uint16_t *exif_data = (uint16_t *)data;
                 if (count > 1) {
                     uint16_t *values =
                         (uint16_t *)malloc(count * sizeof(uint16_t));
@@ -2736,8 +2727,8 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
                         LOGE("No memory for short array");
                         rc = NO_MEMORY;
                     } else {
-                        memcpy(values, exif_data, count * sizeof(uint16_t));
-                        m_Entries[m_nNumEntries].tag_entry.data._shorts = values;
+                        memcpy(values, data, count * sizeof(uint16_t));
+                        m_Entries[m_nNumEntries].tag_entry.data._shorts =values;
                     }
                 } else {
                     m_Entries[m_nNumEntries].tag_entry.data._short =
@@ -2747,7 +2738,6 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
             break;
         case EXIF_LONG:
             {
-                uint32_t *exif_data = (uint32_t *)data;
                 if (count > 1) {
                     uint32_t *values =
                         (uint32_t *)malloc(count * sizeof(uint32_t));
@@ -2755,7 +2745,7 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
                         LOGE("No memory for long array");
                         rc = NO_MEMORY;
                     } else {
-                        memcpy(values, exif_data, count * sizeof(uint32_t));
+                        memcpy(values, data, count * sizeof(uint32_t));
                         m_Entries[m_nNumEntries].tag_entry.data._longs = values;
                     }
                 } else {
@@ -2766,14 +2756,13 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
             break;
         case EXIF_RATIONAL:
             {
-                rat_t *exif_data = (rat_t *)data;
                 if (count > 1) {
                     rat_t *values = (rat_t *)malloc(count * sizeof(rat_t));
                     if (values == NULL) {
                         LOGE("No memory for rational array");
                         rc = NO_MEMORY;
                     } else {
-                        memcpy(values, exif_data, count * sizeof(rat_t));
+                        memcpy(values, data, count * sizeof(rat_t));
                         m_Entries[m_nNumEntries].tag_entry.data._rats = values;
                     }
                 } else {
@@ -2796,7 +2785,6 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
             break;
         case EXIF_SLONG:
             {
-                int32_t *exif_data = (int32_t *)data;
                 if (count > 1) {
                     int32_t *values =
                         (int32_t *)malloc(count * sizeof(int32_t));
@@ -2804,7 +2792,7 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
                         LOGE("No memory for signed long array");
                         rc = NO_MEMORY;
                     } else {
-                        memcpy(values, exif_data, count * sizeof(int32_t));
+                        memcpy(values, data, count * sizeof(int32_t));
                         m_Entries[m_nNumEntries].tag_entry.data._slongs =values;
                     }
                 } else {
@@ -2815,14 +2803,13 @@ int32_t QCamera3Exif::addEntry(exif_tag_id_t tagid,
             break;
         case EXIF_SRATIONAL:
             {
-                srat_t *exif_data = (srat_t *)data;
                 if (count > 1) {
                     srat_t *values = (srat_t *)malloc(count * sizeof(srat_t));
                     if (values == NULL) {
                         LOGE("No memory for sign rational array");
                         rc = NO_MEMORY;
                     } else {
-                        memcpy(values, exif_data, count * sizeof(srat_t));
+                        memcpy(values, data, count * sizeof(srat_t));
                         m_Entries[m_nNumEntries].tag_entry.data._srats = values;
                     }
                 } else {
