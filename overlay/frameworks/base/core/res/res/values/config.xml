@@ -688,4 +688,3 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">false</bool>
 </resources>
-
