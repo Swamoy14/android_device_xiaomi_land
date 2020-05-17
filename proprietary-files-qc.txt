@@ -170,10 +170,10 @@ vendor/lib64/libsecureui_svcsock.so|060bbd76ead3b3aeb323af0c7352f9445088d3fe
 vendor/lib64/libspl.so|8c848b95674bb6c9f40415568dafe086a3d952f7
 vendor/lib64/libssd.so|33d717f793c2579e3bd17b5ce6534cb68c12887d
 
-# DRM - Widevine - LA.UM.8.6.r1-04000-89xx.0
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
-vendor/lib64/libwvhidl.so
+# DRM - from X00P - QKQ1.191002.002 17.00.2003.23-20200401
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine|f4258fe902140e7a35c59f79d274dde89a80d1e8
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|e3cb732c0bd519988100675edf385d947abf5f6c
+vendor/lib64/libwvhidl.so|9ec623494b72ac42ef7abebf29d4eef800ae0e38
 
 # Gatekeeper - from LA.UM.8.6.r1-04000-89xx.0
 vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8937.so|b3a9d78faa65029b0a20f2ff6dfe986bc80b64c1
@@ -372,15 +372,15 @@ vendor/lib64/libperfconfig.so|c2929d897e116a0f775213e5ddfb785b313d8fd5
 vendor/lib64/vendor.qti.hardware.perf@1.0.so|125a5c14b4e768ef7ce1d89abee9b2421f17b7ba
 vendor/lib64/vendor.qti.hardware.perf@2.0.so|d4f082dcf0fedec3376144f91bc163c3c863ebd4
 
-# Perf-IOP from X00P - QKQ1.191002.002 17.00.2003.23-20200401
-vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
+# Perf-IOP - from X00P - QKQ1.191002.002 17.00.2003.23-20200401
+vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so|c16cde136194fd07c75aaadb6be5a0dbd8b315a4
+vendor/lib/libqti-iopd-client.so|98c1aafb71fc5cf05197831deeb1456572d7cb77
+vendor/lib/vendor.qti.hardware.iop@1.0.so|f522603e1b741ff8dcf643e8fe9ce407316dfbe4
+vendor/lib/vendor.qti.hardware.iop@2.0.so|ddd07fb38fa22976e2dc9860fb52c5ce1f1a0bde
+vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|5bb2e93e988da810ff12c539996111632542b403
+vendor/lib64/libqti-iopd-client.so|c7296f02c126f8c7402eae0f79737908901afa36
+vendor/lib64/vendor.qti.hardware.iop@1.0.so|3f738546cbdebf7d7a769568c4c5b43f3d8e2c54
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|f40ce3fe82f85dba57df0185cc42e491da585329
 
 # Keystore - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8937.so|265cd4d0246f5e2e80916dd1c96262be28306b31
