@@ -541,11 +541,11 @@ vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
 vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
 vendor/lib64/sensors.ssc.so|3d6eed945ab3ec2d91517cd6e9941df17a290445
 
-# Thermal - from LA.UM.8.6.r1-01900-89xx.0
-vendor/bin/thermal-engine|bbf772d4acf6c11413d2f728140aae63a49d3eae
--vendor/lib64/libthermalclient.so|796c3e071fe9d6fa57598e1205a762cb55720f88
-vendor/lib64/libthermalioctl.so|6eed5b8ca6989809eac27abd4af19bbd6f3845ee
--vendor/lib/libthermalclient.so|523476e106337823696f0600b48f057d8c629465
+# Thermal - from daisy - QKQ1.191002.002/V11.0.4.0.QDLMIXM
+vendor/bin/thermal-engine|1adec8c5de1a095ed790879e5aabe1e249c816e3
+-vendor/lib/libthermalclient.so|5366dedac700727f05ed1729bf00c855d0777de4
+-vendor/lib64/libthermalclient.so|fead3fb780b175ef478c7ab120639dea5b37a802
+vendor/lib64/libthermalioctl.so|dbb89b6990fed7373cbfcfeac9c90a5dd2bc2bdd
 
 # Time services - from daisy - QKQ1.191002.002 V11.0.2.0.QDLMIXM
 -vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um|27f9b81621c446baa8c37581d9bfbca2fd67b496
