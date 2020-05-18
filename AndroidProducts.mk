@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_land.mk
+    $(LOCAL_DIR)/komodo_land.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_land-user \
-    lineage_land-userdebug \
-    lineage_land-eng
+    komodo_land-user \
+    komodo_land-userdebug \
+    komodo_land-eng

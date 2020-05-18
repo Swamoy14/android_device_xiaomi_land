@@ -21,12 +21,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from land device
 $(call inherit-product, device/xiaomi/land/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Komodo-OS stuff.
+$(call inherit-product, vendor/komodo/config/common_full_phone.mk)
+
+# Gapps
+CURRENT_BUILD_TYPE := nogapps
+
+# OFFICIAL TAG
+KOMODO_OFFICIAL=true
+
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := land
-PRODUCT_NAME := lineage_land
+PRODUCT_NAME := komodo_land
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 3S
 PRODUCT_MANUFACTURER := Xiaomi
