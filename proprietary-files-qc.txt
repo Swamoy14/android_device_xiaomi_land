@@ -385,14 +385,6 @@ vendor/lib64/vendor.qti.hardware.iop@2.0.so|f40ce3fe82f85dba57df0185cc42e491da58
 # Keystore - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8937.so|265cd4d0246f5e2e80916dd1c96262be28306b31
 
-# Keymaster - from Panther
-vendor/lib/libkeymasterutils.so|19db673f1ac818c86bae88e35a27c789b16c320f
-vendor/lib/libkeymasterprovision.so|f95f57aee75d69bf58aa39f1a80c3002fc83b233
-vendor/lib/libkeymasterdeviceutils.so|4f6f530e75402d1125378c55a681232a539e7f5b
-vendor/lib64/libkeymasterutils.so|9076de59a149bd41a01389938c2a2f907f6bc035
-vendor/lib64/libkeymasterprovision.so|7922047f165e9c6d0eadc22f632d838c20d40895
-vendor/lib64/libkeymasterdeviceutils.so|586b9f8b4ba3c9f947f656d6f2a2a8152bad8dfa
-
 # Listen - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/hw/sound_trigger.primary.msm8953.so:vendor/lib/hw/sound_trigger.primary.msm8937.so|b47051e826382b19894501471eb629173df6a967
 vendor/lib/libadpcmdec.so|be5fdf08a08b635816381e61b6bbf2874c62f613
@@ -546,6 +538,7 @@ vendor/bin/thermal-engine|1adec8c5de1a095ed790879e5aabe1e249c816e3
 -vendor/lib/libthermalclient.so|5366dedac700727f05ed1729bf00c855d0777de4
 -vendor/lib64/libthermalclient.so|fead3fb780b175ef478c7ab120639dea5b37a802
 vendor/lib64/libthermalioctl.so|dbb89b6990fed7373cbfcfeac9c90a5dd2bc2bdd
+vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
 
 # Time services - from daisy - QKQ1.191002.002 V11.0.2.0.QDLMIXM
 -vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um|27f9b81621c446baa8c37581d9bfbca2fd67b496
