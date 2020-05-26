@@ -6,3 +6,7 @@ persist.spectrum.profile    u:object_r:spectrum_prop:s0
 
 # Dirac
 persist.audio.dirac.        u:object_r:dirac_prop:s0
+
+# TimeKeep
+persist.vendor.timeadjust          u:object_r:vendor_timekeep_prop:s0
+

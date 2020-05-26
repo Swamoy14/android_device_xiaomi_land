@@ -40,6 +40,10 @@
 # FPS Info
 /sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
 
+# TimeKeep
+/sys/devices/soc\.0/qpnp-rtc-8/rtc/rtc0(/.*)?                        u:object_r:sysfs_rtc:s0
+/(system/vendor|vendor)/bin/timekeep                                 u:object_r:timekeep_exec:s0
+
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
 
