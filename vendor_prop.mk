@@ -168,13 +168,15 @@ PRODUCT_PROPERTY_OVVERIDES += \
 ro.vendor.extension_library=libqti-perfd-client.so \
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
-# Perf Ux IOPrefetcher
+# IOP and Workload Classifier props
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.enable_prefetch=1 \
-vendor.iop.enable_uxe=1 \
-vendor.iop.enable_prefetch_ofr=1 \
-vendor.perf.iop_v3.enable=1 \
-persist.vendor.qti.games.gt.prof=1 \
+   vendor.enable_prefetch=1 \
+   vendor.iop.enable_uxe=1 \
+   vendor.iop.enable_prefetch_ofr=1 \
+   vendor.perf.iop_v3.enable=1 \
+   persist.vendor.qti.games.gt.prof=1 \
+   vendor.perf.workloadclassifier.enable=true \
+   vendor.perf.gestureflingboost.enable=true
 
 # Sim Selection Fix
 persist.vendor.radio.aosp_usr_pref_sel=true
