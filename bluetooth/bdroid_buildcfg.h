@@ -20,8 +20,9 @@
 
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
 #define MAX_ACL_CONNECTIONS    7
-#define MAX_L2CAP_CHANNELS    16
+#define MAX_L2CAP_CHANNELS    32
 #define BLE_VND_INCLUDED   TRUE
+#define GATT_MAX_PHY_CHANNEL  10
 #define BTA_BLE_SKIP_CONN_UPD  FALSE
 #define BLE_PERIPHERAL_ADV_NAME  FALSE
 #define BT_CLEAN_TURN_ON_DISABLED TRUE
@@ -30,7 +31,6 @@
 #define BTM_WBS_INCLUDED TRUE
 #define BTIF_HF_WBS_PREFERRED TRUE
 
-/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
-#define AVDT_NUM_SEPS                  12
+#define AVDT_NUM_SEPS 35
 
 #endif
