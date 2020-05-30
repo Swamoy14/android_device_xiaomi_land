@@ -182,9 +182,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    vendor.perf.workloadclassifier.enable=true \
    vendor.perf.gestureflingboost.enable=true
 
-# Sim Selection Fix
-persist.vendor.radio.aosp_usr_pref_sel=true
-
 # SurfaceFlinger sensor props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
