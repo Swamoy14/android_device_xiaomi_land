@@ -265,16 +265,16 @@ vendor/lib64/libhdr_tm.so|c388a9b14966583cde2c682c129fcf5cfa298239
 
 # Graphics (SDM) - from LA.UM.8.6.r1-04000-89xx.0
 vendor/lib/libscalar.so|7ac579768ffd2caee903d69d8fd3f7918b04ffbe
-vendor/lib/libsdm-color.so|6dc7253b7c3b950777d0d4ece05db7b45a2d294f
+vendor/lib/libsdm-color.so|fa3f8c0062d474fdf6960fcbcc3bf21a5c3fd594
 vendor/lib/libsdm-diag.so|46b5c2d6fab1e655efde1657b2e51dc00c00b763
 -vendor/lib/libsdm-disp-vndapis.so|9bd99e0024f5abcc285f64aadea8725556f16789
-vendor/lib/libsdmextension.so|dd1b0812e134ff75994812732954fa03d7eb4414
+vendor/lib/libsdmextension.so|5d4f365e0f9cae77e51deab70ea27114ea57389b
 vendor/lib/libtinyxml2_1.so|ef2167416f7a5a503256c5e818fcfa660d5146f4
 vendor/lib64/libscalar.so|b7feb3266d5bccab8b26c49eea6ac8e295192f9a
-vendor/lib64/libsdm-color.so|dc3e17f9858e4578c69fd597b21f0dd4f6f52794
+vendor/lib64/libsdm-color.so|993dc946c4aa439280527c13798938c51dd9dee7
 vendor/lib64/libsdm-diag.so|87373a043267b9b3bb923931a910119a9deb425f
 -vendor/lib64/libsdm-disp-vndapis.so|b1dede9efa81e8d0374343612ad7ad0d967e8e29
-vendor/lib64/libsdmextension.so|133db0462e62fa331eb622b02528b5cdcc08a446
+vendor/lib64/libsdmextension.so|544f08d91ae5f50184b4f5661f327ce85ca74a72
 vendor/lib64/libtinyxml2_1.so|56d4d5d0ea010f951de219c7b9fd2c9695a5b9d2
 
 # Graphics (Postprocessing) - from LA.UM.8.6.r1-04000-89xx.0
@@ -286,13 +286,13 @@ vendor/bin/mm-pp-dpps|5d68b2ae07de96e33d1c1b7698994ec2b219e084
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
 vendor/lib/libdisp-aba.so|0de85e6fc20afc083ede386fecb90a08ac59117e
-vendor/lib/vendor.display.color@1.0.so|fb26ad8a8093b58484f58176394b2750d2f9a534
-vendor/lib/vendor.display.postproc@1.0.so|4023d0dd9b4c391caa1fcdb59ab9841e42b57aaa
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|4fb98c658d6e2c624cff498f4af79a2b64aec79a
+vendor/lib/vendor.display.color@1.0.so|0f259a047d6e85c5b37d82936051a892400149c0
+vendor/lib/vendor.display.postproc@1.0.so|00f67e4ede7b82cbb853f2235eab89f7d916d236
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|fe613dceb7f9fd56ff1d17f8ef17b40d47a61eda
 vendor/lib64/libdisp-aba.so|8131a967a51959d88006a20b1f12ced0bf075e4c
-vendor/lib64/vendor.display.color@1.0.so|f0af4540df53f4b921af726515beda9a1982c79e
-vendor/lib64/vendor.display.postproc@1.0.so|b492eb78d6f4c32158883b142f5d731706a2f7dc
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|f8a0e23cf538bc6664627ba9ac9efec7cfb34077
+vendor/lib64/vendor.display.color@1.0.so|3c9d7e4c66bd95db07022e43e5f55a774d584bba
+vendor/lib64/vendor.display.postproc@1.0.so|cd36d0796c6631d25056fdc5cb28a50219620e04
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|4c130641f85b8707acbc852eadcc480883396fdc
 
 # Graphics (Vulkan) - from daisy - QKQ1.191002.002/V11.0.4.0.QDLMIXM
 vendor/lib/hw/vulkan.msm8953.so:vendor/lib/hw/vulkan.msm8937.so|c24dee59782e94c119e1e6ae00ac05c2d67c3f93
@@ -300,8 +300,8 @@ vendor/lib64/hw/vulkan.msm8953.so:vendor/lib64/hw/vulkan.msm8937.so|8c01e237bdc5
 
 # Graphics firmware - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
-vendor/firmware/a530_pfp.fw|448f9db8271fefb08348cbc50409e8e95bd93f78
-vendor/firmware/a530_pm4.fw|5741a28752355b478d455635bab008028ff7e1c6
+vendor/firmware/a530_pfp.fw|d027c70fde64241ec13160d09ee1b6c272974a4b
+vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 vendor/firmware/a530v1_pfp.fw|0864291b99bed712edfcffa94be7b4595d3af306
 vendor/firmware/a530v1_pm4.fw|6a82a4fb4035fa2a933c1a26b5535d7ec7c0ac4c
 vendor/firmware/a530v2_seq.fw2|63b6d25594a5c1f4217d996a2b636e17a29fc840
@@ -548,12 +548,17 @@ vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
 vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
 vendor/lib64/sensors.ssc.so|3d6eed945ab3ec2d91517cd6e9941df17a290445
 
-# Thermal - from daisy - QKQ1.191002.002/V11.0.4.0.QDLMIXM
+# Thermal - from X00P - QKQ1.191002.002 17.00.2003.23-20200401
+vendor/bin/hw/android.hardware.thermal@1.0-service|c025b2b3189b9499d8bdb06095bacc023a451d3b
 vendor/bin/thermal-engine|1adec8c5de1a095ed790879e5aabe1e249c816e3
+vendor/etc/init/android.hardware.thermal@1.0-service.rc|83a76be56b9b0843ff3f2c06186c63156a459acb
+vendor/lib/hw/android.hardware.thermal@1.0-impl.so|b99eea4e53b260178243e68f69bd8e26acd41065
+vendor/lib/hw/thermal.msm8937.so|996bfafadffcc13b28ac3b862e56a809019364e5
 -vendor/lib/libthermalclient.so|5366dedac700727f05ed1729bf00c855d0777de4
+vendor/lib64/hw/thermal.msm8937.so|d1ea7b039999b85169db0e0304690a5238d2a269
+vendor/lib64/hw/android.hardware.thermal@1.0-impl.so|84c5b49a453d9aadd8b2a3730634cfcc2bc3a324
 -vendor/lib64/libthermalclient.so|fead3fb780b175ef478c7ab120639dea5b37a802
 vendor/lib64/libthermalioctl.so|dbb89b6990fed7373cbfcfeac9c90a5dd2bc2bdd
-vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
 
 # Time services - from daisy - QKQ1.191002.002 V11.0.2.0.QDLMIXM
 -vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um|27f9b81621c446baa8c37581d9bfbca2fd67b496
