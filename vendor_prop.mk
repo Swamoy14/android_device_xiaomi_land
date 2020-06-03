@@ -202,3 +202,7 @@ spectrum.support=1
 # Optimize
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=1
+
+# Zygote preforking
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.device_config.runtime_native.usap_pool_enabled=true
