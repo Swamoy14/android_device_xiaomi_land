@@ -68,7 +68,6 @@ debug.egl.hw=0 \
 debug.enable.sglscale=1 \
 debug.gralloc.enable_fb_ubwc=1 \
 debug.mdpcomp.logs=0 \
-debug.sdm.support_writeback=0 \
 debug.sf.enable_hwc_vds=1 \
 debug.sf.hw=0 \
 debug.sf.latch_unsignaled=1 \
@@ -80,6 +79,7 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
 ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.enable_default_color_mode=1 \
@@ -129,14 +129,7 @@ vendor.video.disable.ubwc=1
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.extension_library=libqti-perfd-client.so \
-ro.vendor.qti.sys.fw.bg_apps_limit=60 \
-ro.vendor.qti.core_ctl_min_cpu=2 \
-ro.vendor.qti.core_ctl_max_cpu=4 \
-ro.vendor.qti.sys.fw.bservice_enable=true \
-ro.sys.fw.dex2oat_thread_count=8 \
-dalvik.vm.boot-dex2oat-threads=8 \
-dalvik.vm.bg-dex2oat-threads=2 \
-dalvik.vm.dex2oat-threads=6
+ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -187,10 +180,8 @@ service.qti.ims.enabled=1
 
 # SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
-debug.sf.early_phase_offset_ns=1500000 \
-debug.sf.early_app_phase_offset_ns=1500000 \
-debug.sf.early_gl_phase_offset_ns=3000000 \
-debug.sf.early_gl_app_phase_offset_ns=15000000
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+ro.surface_flinger.max_virtual_display_dimension=4096
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
