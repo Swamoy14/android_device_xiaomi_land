@@ -165,8 +165,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVVERIDES += \
-ro.vendor.extension_library=libqti-perfd-client.so \
-ro.vendor.qti.sys.fw.bg_apps_limit=60
+   ro.vendor.extension_library=libqti-perfd-client.so \
+   ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+   dalvik.vm.boot-dex2oat-threads=8 \
+   ro.sys.fw.dex2oat_thread_count=8 \
+   dalvik.vm.bg-dex2oat-threads=2 \
+   dalvik.vm.dex2oat-threads=6 \
+   ro.vendor.qti.core_ctl_min_cpu=2 \
+   ro.vendor.qti.core_ctl_max_cpu=4
 
 # IOP and Workload Classifier props
 PRODUCT_PROPERTY_OVERRIDES += \
