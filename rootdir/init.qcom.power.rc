@@ -65,11 +65,5 @@ on property:sys.boot_completed=1
     trigger enable-low-power
     setprop sys.io.scheduler cfq
 
-service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
-    class late_start
-    user root
-    disabled
-    oneshot
-
 on boot
         chown system system /sys/kernel/hbtp/display_pwr
