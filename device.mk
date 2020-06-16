@@ -18,6 +18,7 @@ $(call inherit-product, vendor/xiaomi/land/land-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
@@ -210,6 +211,9 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 
+# IPACM Data
+$(call inherit-product, device/xiaomi/land/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
@@ -305,6 +309,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.goodix.sh \
+    init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
