@@ -110,7 +110,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     sdm.debug.disable_skip_validate=1 \
     debug.sf.disable_backpressure=1 \
-    sdm.perf_hint_window=50
+    sdm.perf_hint_window=50 \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
