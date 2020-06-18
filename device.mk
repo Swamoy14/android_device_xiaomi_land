@@ -131,9 +131,10 @@ PRODUCT_PACKAGES += \
 # Charger
 include $(LOCAL_PATH)/rootdir/etc/charger/charger.mk
 
-# Consumerir
+# ConsumerIR
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.xiaomi_land
+    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-service
 
 # Display
 PRODUCT_PACKAGES += \
