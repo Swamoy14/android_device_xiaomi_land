@@ -438,16 +438,22 @@ vendor/lib/libOmxEvrcDec.so|20a6be418df26f48751b4178f5642e3fc6902690
 vendor/lib/libOmxG711Dec.so|da79b377947eeeb843b028ac3272a81f2be6a5f1
 vendor/lib/libOmxQcelp13Dec.so|27a75185e62e88ea84ac2448a3842c998899ae90
 vendor/lib/libOmxVideoDSMode.so|84a6b99f5ad0c7dbe827eb01258cca4c790c0fe7
-vendor/lib/libOmxVpp.so|46e4928c392716943986a3b490680d3e08fdf3e4
+vendor/lib/libOmxVpp.so|c942fe466d4fca870e356de2a452dbfd6e303412
 vendor/lib/libOmxWmaDec.so|c3da756ae14234ae8e56cbc0b32249fbd4c8746a
-vendor/lib/libvpplibrary.so|816a79fe9a6d30e9402acb767119b9ee1c2c8aea
+vendor/lib/libvpplibrary.so|77d1d8d7fa879d1c5df1fb4e210de1e715bf139e
 vendor/lib/libvqzip.so|24e5eb30e5a2cdb544c8688d81d7cc75a1d85eaf
 vendor/lib64/libgpustats.so|a899ae72983277442cdacf8f43271986c91ce710
 
-# Media OMX - from TA-1025_00WW 8.1.0 OPR1.170623.026
+# Media OMX - from - LA.UM.8.6.r1-01900-89xx.0
+vendor/lib/libAlacSwDec.so|339a78c17a0b7032e678a38deb523a0d403fdb41
+vendor/lib/libApeSwDec.so|013abb41d28f28bac9904562049c4460add11a47
+vendor/lib/libFlacSwDec.so|ff125da726e44764cf1f249f9214022f1c723ce6
 vendor/lib/libMpeg4SwEncoder.so|971eb18b4209287f7c078c082508ebc46c11de0e
-vendor/lib/libOmxSwVdec.so|c1375674bd80792581bb297525fe932ef050424b
-vendor/lib/libOmxSwVencMpeg4.so|024bde5984f312b398d0ae172df7d8fb2db279bc
+vendor/lib/libOmxSwVdec.so|3266ebc8499e38b21211942a2ec843c2eafe17ee
+vendor/lib/libOmxSwVencMpeg4.so|91487e1059c8d412751b9a9e2edc74f2eb2863b1
+vendor/lib/libswvdec.so|a240b48b4c374d9418197d0f3dc3fccad6eee909
+vendor/lib64/libswvdec.so|928e421d7f4a8c8d1b1e8a37e8dd37f46d2c86c4
+vendor/lib64/libvpplibrary.so|9801e062790202f7aa640c866415be71177908f7
 
 # Peripheral manager - from daisy - QKQ1.191002.002 V11.0.2.0.QDLMIXM
 vendor/bin/pm-proxy|1f216a6f54e9b97c026f3f3bc4d7d441d58d90a7
