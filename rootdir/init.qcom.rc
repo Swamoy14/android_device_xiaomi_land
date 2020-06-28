@@ -168,10 +168,6 @@ on boot
     chown root system /sys/class/leds/infrared/transmit
     chown root system /sys/class/leds/infrared/brightness
 	
-    # USB Fastcharge
-    chown system system /sys/kernel/fast_charge/force_fast_charge
-    chmod 0660 /sys/kernel/fast_charge/force_fast_charge
-
     # Notification LEDs
     chown root system /sys/class/leds/red/blink
     chown root system /sys/class/leds/green/blink
@@ -411,6 +407,17 @@ service charger /sbin/charger
     class charger
     group system graphics
     seclabel u:r:healthd:s0
+
+service hvdcp /system/bin/hvdcp
+    class core
+    user root
+    disabled
+
+on property:persist.usb.hvdcp.detect=true
+    start hvdcp
+
+on property:persist.usb.hvdcp.detect=false
+    stop hvdcp
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class late_start

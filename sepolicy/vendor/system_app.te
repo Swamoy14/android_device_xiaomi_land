@@ -9,3 +9,4 @@ allow system_app sysfs_vibrator:dir search;
 allow system_app spectrum_prop:property_service set;
 get_prop(system_app, spectrum_prop);
 allow system_app spectrum_prop:file read;
+allow system_app mm-qcamerad_exec:file read;

@@ -64,8 +64,8 @@ vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so|0ff482f72a05eb9e2a4617fe03ae
 # Bluetooth (Shared Dependencies) - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|027c226838e80a04209e5fb6a8882ce78c3b4222
 
-# Charger - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
-vendor/bin/hvdcp_opti|7ee82dd264c7c349fb498111a61d5009ae9f0da2
+# Charger - from X00P - QKQ1.191002.002 17.00.2003.23-20200401
+vendor/bin/hvdcp_opti|28ddc05c33e107dc74bad6a5b5d9eef7d9250416
 
 # Consumer IR - from santoni (Redmi 4X)
 lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.default.so|53830d64d63d6cc405209d8d4cafea102dcd7b54

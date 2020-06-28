@@ -25,6 +25,8 @@ allow hal_fingerprint_land mnt_user_file:lnk_file read;
 allow hal_fingerprint_land sdcardfs:dir search;
 allow hal_fingerprint_land storage_file:dir search;
 allow hal_fingerprint_land storage_file:lnk_file read;
+allow hal_fingerprint_land sdcardfs:file { open };
+allow hal_fingerprint_land media_rw_data_file:file { getattr };
 
 set_prop(hal_fingerprint_land, system_prop)
 r_dir_file(hal_fingerprint_land, firmware_file)
