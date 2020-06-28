@@ -466,3 +466,5 @@ on property:init.svc.media=restarting
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
+on property:dev.bootcomplete=1  
+    restart ril-daemon
