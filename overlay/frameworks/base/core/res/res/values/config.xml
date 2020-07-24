@@ -586,5 +586,8 @@
 
     <!-- Aspect ratio of screen -->
     <item name="config_screenAspectRatio" format="float" type="dimen">1.7</item>
+	
+    <!-- Enable the RingtonePickerActivity in 'com.android.providers.media'. -->
+    <bool name="config_defaultRingtonePickerEnabled">true</bool>
 
 </resources>
