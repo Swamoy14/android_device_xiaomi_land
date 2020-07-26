@@ -16,6 +16,7 @@
 #
 
 LOCAL_PATH := device/xiaomi/land
+$(call inherit-product, $(LOCAL_PATH)/go_land.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
