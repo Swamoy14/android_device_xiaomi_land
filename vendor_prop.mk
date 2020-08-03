@@ -27,7 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     ro.config.media_vol_steps=15 \
     ro.config.vc_call_vol_steps=7 \
-    ro.vendor.audio.sdk.fluencetype=fluence \
+    ro.vendor.audio.sdk.fluencetype=none \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio_hal.period_size=240 \
     vendor.audio.hw.aac.encoder=true \
@@ -41,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.pp.asphere.enabled=false \
     vendor.audio.safx.pbe.enabled=true \
     vendor.tunnel.audio.encode=false \
-    vendor.voice.conc.fallbackpath=deep-buffer \
+    vendor.voice.conc.fallbackpath=fast \
     vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
