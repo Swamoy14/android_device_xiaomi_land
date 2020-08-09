@@ -817,7 +817,7 @@ vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc|fd11367b2585702190ef2577c
 vendor/etc/init/vendor.qti.hardware.perf@2.1-service.rc|0d7eaa2a99b16738f4e40d7ee7473bb0dd705d2c
 vendor/etc/perf/commonresourceconfigs.xml|ac0cb850f89f688655bff3537aec1cba8302a7fa
 vendor/etc/perf/perfboostsconfig.xml|1c120821b2fe9b3ebf9d00b7bc8c0a374c2918d2
-vendor/etc/perf/perfconfigstore.xml|a648ffc6b30e10631f632e62299c3400ca6febc1
+vendor/etc/perf/perfconfigstore.xml|dfa3a78fd24cba4b870a3cd04d657cc9962c8331
 vendor/etc/perf/targetconfig.xml|aa20c25397df1455206965737f82d44d44430e45
 vendor/etc/perf/targetresourceconfigs.xml|d9f9815764725df55e748bf4af4829e609dac853
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so|6e42e6b3555e47c730a69fd5522099c5729b272a
@@ -1069,6 +1069,10 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|d4d025e0a12af87f65104
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|705e64a3b388cf8d0a3e5fa1b602b4116576812f
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|182440c6d1f9dde20ee12420ec6319104388b8f3
+
+# VNDK - from copied
+vendor/lib/vndk-sp/libcutils.so|846d5769b71abca5b8fa185d4cf83a5cf1afed3c
+vendor/lib/vndk/libprocessgroup.so|d2b88fec1e836193252456335e93afe058d84515
 
 # Wi-Fi - from Tissot PKQ1.180917.001.V10.0.17.0.PDHMIXM
 vendor/bin/wcnss_service|f8ecd38a41b6b7f832380b489e0c9804c34174d8
