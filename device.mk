@@ -19,13 +19,13 @@ $(call inherit-product, vendor/xiaomi/land/land-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
