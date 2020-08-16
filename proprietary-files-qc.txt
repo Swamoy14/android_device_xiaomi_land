@@ -234,7 +234,7 @@ vendor/lib/libc2d30_bltlib.so|9b54b59c72277d94ee81223efeb5fc1e190fcc0f
 vendor/lib/libCB.so|2b3b51a70527f7bddc463c8e1808b4200fb13698
 vendor/lib/libgsl.so|32db65dcbc00e172a5d91e10ab270b3ecfecfcab
 vendor/lib/libllvm-glnext.so|1eed0390c1fc63763914e31c0a97f06b8bff271f
-vendor/lib/libllvm-qcom.so|a5442e65e81bf66ae7d551d7801908f8fa3ff4c0
+vendor/lib/libllvm-qcom.so|3079ae9049c8758664e6ade78837e0fc6c2272d5
 vendor/lib/libOpenCL.so|9ee3900265f9b855f526c0ce4fcfdaed51d62003
 vendor/lib/librs_adreno_sha1.so|0d284a2bb885fd5b4499952778208a4e289b3869
 vendor/lib/librs_adreno.so|9d60513decf0af27a531e76459f12b5ec57b096c
@@ -253,7 +253,7 @@ vendor/lib64/libc2d30_bltlib.so|737594a47bae5aad0ffc999896ba15693f7e4c4b
 vendor/lib64/libCB.so|145d77227d6a6e582b91b68c735e34af6a4ee3f3
 vendor/lib64/libgsl.so|2a408f2d63eafd7312a2a4fa3e949cd176370e9e
 vendor/lib64/libllvm-glnext.so|5a6c0b6983133b7e4750e8984b9f71a25b837a20
-vendor/lib64/libllvm-qcom.so|954937d9491e48caf5a6a1ac322f8feafcbbc4ca
+vendor/lib64/libllvm-qcom.so|88f4199538ce887c91936bf70eef31615c938aa2
 vendor/lib64/libOpenCL.so|84c7d8be13885c9346f73c09aaaedc3bce7667d9
 vendor/lib64/librs_adreno_sha1.so|cc1701cb536532fc6269142db82f7c2deec30cf5
 vendor/lib64/librs_adreno.so|a887f0542d5fcd45a437db9bf04ac77ee480bd0e
@@ -372,7 +372,7 @@ vendor/etc/perf/commonresourceconfigs.xml|d9fc3b49481536d6c7a25eb13f9f1d52d3ee8f
 vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
 vendor/etc/perf/perf-profile1.conf|5ce649b26b71048734b797af7340d9f7f7b83ca0
 vendor/etc/perf/perfboostsconfig.xml|7613142d183c5c3bba03af7ae7cb24d517219141
-vendor/etc/perf/perfconfigstore.xml|7fa27b0b76f3ffdbbd0289288ddc4e007b0f4023
+vendor/etc/perf/perfconfigstore.xml|709b1b96ff0f47f2e5f12c6795e6434d06b33bf0
 vendor/etc/perf/targetconfig.xml|6106b22017b4e759c5804d12f439d2d09d567706
 vendor/etc/perf/targetresourceconfigs.xml|1817b8766a5b70c40c302f0add16a783fde135a4
 vendor/lib/libperfgluelayer.so|3c58ba816cf4480357b1ed934d2b44f17d00449f
@@ -503,6 +503,8 @@ vendor/lib64/libqmiservices.so|842a1b61fad7dd34753e945ee2ada0fdc9589c09
 # QMI (shared dependencies) - from daisy - QKQ1.191002.002/V11.0.4.0.QDLMIXM
 vendor/lib/libqmi_cci.so|a921e84ec500f7cfb7fe88a4ffba149581410a44
 vendor/lib64/libqmi_cci.so|411a074dc765fb263bec50531ce5c408dd72388f
+vendor/lib/libpdmapper.so|0959fa03d43b08dea91a57ed6aea228751f80573
+vendor/lib64/libpdmapper.so|b837641e006ff90a49764d7ac78553de537acd74
 
 # RIL - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 -app/datastatusnotification/datastatusnotification.apk|ceafcce87298531a3adb13a87709a1fd65291625
