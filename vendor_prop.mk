@@ -93,12 +93,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=0 \
+    debug.egl.hw=1 \
     debug.enable.sglscale=1 \
     debug.gralloc.enable_fb_ubwc=1 \
     debug.sf.enable_hwc_vds=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    debug.sf.hw=0 \
+    debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.recomputecrop=0 \
     dev.pm.dyn_samplingrate=1 \
@@ -165,13 +165,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVVERIDES += \
    ro.vendor.extension_library=libqti-perfd-client.so \
-   ro.vendor.qti.sys.fw.bg_apps_limit=60 \
-   dalvik.vm.boot-dex2oat-threads=8 \
-   ro.sys.fw.dex2oat_thread_count=8 \
-   dalvik.vm.bg-dex2oat-threads=2 \
-   dalvik.vm.dex2oat-threads=6 \
-   ro.vendor.qti.core_ctl_min_cpu=2 \
-   ro.vendor.qti.core_ctl_max_cpu=4
+   ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # IOP and Workload Classifier props
 PRODUCT_PROPERTY_OVERRIDES += \
