@@ -550,18 +550,16 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so|f3a3051e4a904268
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|ab552724f7d723a70a4e730dba52ab220d33a33e
 vendor/radio/qcril_database/qcril.db|f25a9215fcc2445e73d1aa0b7ef9bdbd97e33f56
 
-# Sensors - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
-vendor/bin/sensors.qti|3f6368e8d7484f5610fbf899dbe2a95e7cd6855e
-vendor/lib/hw/activity_recognition.msm8953.so:vendor/lib/hw/activity_recognition.msm8937.so|f9247646a5e2b28473753da06f832ae5f702f7c4
-vendor/lib/libsensor1.so|48727a05c1b91051d5ec53860124f1f1c0d8ca53
-vendor/lib/libsensor_reg.so|8ae3b9d1a54feb9f0af55a8fff50410f53660318
-vendor/lib/libsensor_user_cal.so|df85342393b56994b4f4b4c33aad97928bc6f023
-vendor/lib/sensors.ssc.so|c4b5ee167e5b06fde7143007b87ea5dbe90b0565
-vendor/lib64/hw/activity_recognition.msm8953.so:vendor/lib64/hw/activity_recognition.msm8937.so|5531da4cf2451f899602fb7e3f0e80775bb7e5ff
-vendor/lib64/libsensor1.so|48dedf69781fb146fc35e622f1c80a635530da22
-vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
-vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
-vendor/lib64/sensors.ssc.so|3d6eed945ab3ec2d91517cd6e9941df17a290445
+# Sensors - from onc-user-10-QKQ1.191008.001-V11.0.1.0.QFLCNXM-release-keys
+vendor/bin/sensors.qti|49efa5f668386897f0c40108d207718d5ded4795
+vendor/lib/hw/activity_recognition.msm8953.so:vendor/lib/hw/activity_recognition.msm8937.so|60ed5922a2d73f1cda71f7da8dbb702f5dd55df0
+vendor/lib/libsensor1.so|9a557550987839109fa20e4e9830714efa72bd26
+vendor/lib/libsensor_reg.so|ba59e280ae94d491f1f6c19b4e33f477d0bb50c2
+vendor/lib/sensors.ssc.so|af11901a4d2ce291a1b01a27d0796392e15ec303
+vendor/lib64/hw/activity_recognition.msm8953.so:vendor/lib64/hw/activity_recognition.msm8937.so|fe295d5a9a8d9aad9f132c2ee40b592e7db68046
+vendor/lib64/libsensor1.so|e62051ea2fda4750d62f5e9fb854c490c302d209
+vendor/lib64/libsensor_reg.so|3539a0e7888aa187e3d2bbdd357ff183ae6dfdf3
+vendor/lib64/sensors.ssc.so|38e61d8e175b7dc72a2e78c4b8b093446d439ad6
 
 # Thermal - from X00P - QKQ1.191002.002 17.00.2003.23-20200401
 vendor/bin/hw/android.hardware.thermal@1.0-service|c025b2b3189b9499d8bdb06095bacc023a451d3b
