@@ -1,48 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-    <item name="screen.on">63</item>
-    <item name="screen.full">261</item>
+    <item name="screen.on">75</item>
+    <item name="screen.full">320</item>
     <array name="cpu.clusters.cores">
         <value>4</value>
         <value>4</value>
     </array>
     <array name="cpu.core_speeds.cluster0">
-        <value>200000</value>
-        <value>499200</value>
-        <value>533333</value>
-        <value>800000</value>
-        <value>998400</value>
-        <value>1094400</value>
-        <value>1209600</value>
+        <value>614400</value>
+        <value>883200</value>
+        <value>1036800</value>
+        <value>1363200</value>
+        <value>1536000</value>
+        <value>1670400</value>
+        <value>1804800</value>
     </array>
     <array name="cpu.core_power.cluster0">
-        <value>151</value>
-        <value>169</value>
-        <value>177</value>
-        <value>195</value>
-        <value>259</value>
-        <value>307</value>
-        <value>353</value>
+        <value>13</value>
+        <value>20</value>
+        <value>38</value>
+        <value>36</value>
+        <value>45</value>
+        <value>55</value>
+        <value>65</value>
     </array>
     <array name="cpu.core_speeds.cluster1">
-        <value>200000</value>
-        <value>499200</value>
-        <value>533333</value>
-        <value>800000</value>
-        <value>998400</value>
+        <value>633600</value>
+        <value>902400</value>
         <value>1094400</value>
-        <value>1209600</value>
+        <value>1401600</value>
+        <value>1555200</value>
+        <value>1804800</value>
     </array>
     <array name="cpu.core_power.cluster1">
-        <value>151</value>
-        <value>169</value>
-        <value>177</value>
-        <value>195</value>
-        <value>259</value>
-        <value>307</value>
-        <value>353</value>
+        <value>13</value>
+        <value>23</value>
+        <value>33</value>
+        <value>44</value>
+        <value>55</value>
+        <value>68</value>
     </array>
-    <item name="cpu.awake">1.6</item>
-    <item name="cpu.idle">1.6</item>
+    <item name="cpu.awake">4</item>
+    <item name="cpu.idle">3</item>
     <item name="battery.capacity">4100</item>
+    <item name="bluetooth.active">40</item>
+    <item name="bluetooth.at">2</item>
+    <item name="bluetooth.on">2</item>
+    <item name="wifi.on">1</item>
+    <item name="wifi.active">100</item>
+    <item name="wifi.scan">30</item>
+    <item name="dsp.audio">22</item>
+    <item name="dsp.video">80</item>
+    <item name="camera.flashlight">121</item>
+    <item name="camera.avg">400</item>
+    <item name="gps.on">100</item>
+    <item name="radio.active">140</item>
+    <item name="radio.scanning">45</item>
+    <array name="radio.on">
+        <value>8</value>
+        <value>6</value>
+    </array>
 </device>
