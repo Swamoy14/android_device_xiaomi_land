@@ -452,11 +452,5 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     disabled
     oneshot
 
-on property:init.svc.media=restarting
-    restart qcamerasvr
-
-on property:init.svc.servicemanager=restarting
-    restart qcamerasvr
-
 on property:dev.bootcomplete=1  
     restart ril-daemon
