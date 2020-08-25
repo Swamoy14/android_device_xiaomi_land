@@ -719,7 +719,7 @@ else
             echo 100 > /sys/module/vmpressure/parameters/allocstall_threshold
         fi
     fi
-	
+
     # Set swappiness to 100 for all targets
     echo 100 > /proc/sys/vm/swappiness
 
@@ -3004,6 +3004,7 @@ case "$target" in
 
             # Turn on sleep modes.
             echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
+            echo 100 > /proc/sys/vm/swappiness
             ;;
         esac
     ;;
@@ -4295,7 +4296,6 @@ case "$target" in
 
             # Turn on sleep modes.
             echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-            echo 100 > /proc/sys/vm/swappiness
             ;;
         esac
     ;;
@@ -4851,8 +4851,8 @@ case "$target" in
 	echo N > /sys/module/lpm_levels/L3/l3-dyn-ret/idle_enabled
         # Turn on sleep modes.
         echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-	echo 100 > /proc/sys/vm/swappiness
 	echo 120 > /proc/sys/vm/watermark_scale_factor
+	echo 100 > /proc/sys/vm/swappiness
     ;;
 esac
 
