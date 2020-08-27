@@ -19,6 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
+    audio.deep_buffer.media=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicerec=false \
@@ -41,7 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.pp.asphere.enabled=false \
     vendor.audio.safx.pbe.enabled=true \
     vendor.tunnel.audio.encode=false \
-    vendor.voice.conc.fallbackpath=fast \
+    vendor.voice.conc.fallbackpath=deep-buffer \
     vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
