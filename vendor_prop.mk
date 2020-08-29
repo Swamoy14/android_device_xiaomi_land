@@ -43,6 +43,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.safx.pbe.enabled=true \
     vendor.tunnel.audio.encode=false \
     vendor.voice.conc.fallbackpath=deep-buffer \
+    ro.af.client_heap_size_kbyte=7168 \
     vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
