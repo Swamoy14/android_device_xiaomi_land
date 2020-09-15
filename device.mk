@@ -462,3 +462,6 @@ PRODUCT_PACKAGES += \
 
 # Perf
 -include vendor/qcom/common/perf/qti-perf.mk
+
+# Reduce system image size by limiting java debug info.
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
