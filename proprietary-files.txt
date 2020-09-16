@@ -616,7 +616,6 @@ lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so:vendor/lib64/libfp_client.so|c74fac2826f1ef76c32f7bb532c21cfd7bc3c852 
 lib64/libfpnav.so:vendor/lib64/libfpnav.so|588301735456b31b09aa0779a7f46481056868dd 
 lib64/libfpservice.so:vendor/lib64/libfpservice.so|7bfd1abd31551833079e6ffe3138fa9faf9e9040
-vendor/lib64/libbindergx.so|eb676b92d13a7835aaab309d5c692151993e016f
 
 # FM Radio - from LA.UM.8.6.r1-04400-89xx.0
 vendor/bin/fm_qsoc_patches|82ab33e928933b8077e77c1532a58b61a3551932
