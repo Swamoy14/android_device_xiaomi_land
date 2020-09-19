@@ -51,20 +51,20 @@
     <ctl name="TTY Mode" value="Off" />
     <ctl name="HPHL Volume" value="9" />
     <ctl name="HPHR Volume" value="9" />
-    <ctl name="RX1 Digital Volume" value="90" />
-    <ctl name="RX2 Digital Volume" value="90" />
-    <ctl name="RX3 Digital Volume" value="90" />
-    <ctl name="IIR1 INP1 Volume" value="90" />
-    <ctl name="IIR1 INP2 Volume" value="90" />
-    <ctl name="IIR1 INP3 Volume" value="90" />
-    <ctl name="IIR1 INP4 Volume" value="90" />
+    <ctl name="RX1 Digital Volume" value="88" />
+    <ctl name="RX2 Digital Volume" value="88" />
+    <ctl name="RX3 Digital Volume" value="88" />
+    <ctl name="IIR1 INP1 Volume" value="84" />
+    <ctl name="IIR1 INP2 Volume" value="84" />
+    <ctl name="IIR1 INP3 Volume" value="84" />
+    <ctl name="IIR1 INP4 Volume" value="84" />
     <!-- +bug 196716,zhangjianming.wt,MODIFY,20160111,other can not reciving sound  -->
     <ctl name="ADC1 Volume" value="4" />
     <ctl name="ADC2 Volume" value="4" />
     <ctl name="ADC3 Volume" value="4" />
     <!-- +bug 196716,zhangjianming.wt,MODIFY,20160111,other can not reciving sound  -->
-    <ctl name="DEC1 Volume" value="90" />
-    <ctl name="DEC2 Volume" value="90" />
+    <ctl name="DEC1 Volume" value="84" />
+    <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC2 MUX" value="ZERO" />
     <ctl name="DEC1 MUX" value="ZERO" />
     <ctl name="ADC2 MUX" value="ZERO" />
@@ -275,7 +275,7 @@
     <!-- ADSP testfwk end-->
 
     <path name="bt-sco-wb-samplerate">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
     </path>
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
@@ -409,6 +409,11 @@
     <path name="compress-offload-playback2 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia7" value="1" />
     </path>
+    
+    <path name="compress-offload-playback2 bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+        <path name="compress-offload-playback2 bt-sco" />
+    </path>
 
     <path name="compress-offload-playback2 afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia7" value="1" />
@@ -425,6 +430,11 @@
     <path name="compress-offload-playback3 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia10" value="1" />
     </path>
+    
+    <path name="compress-offload-playback3 bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+        <path name="compress-offload-playback3 bt-sco" />
+    </path>
 
     <path name="compress-offload-playback4">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia11" value="1" />
@@ -432,6 +442,11 @@
 
     <path name="compress-offload-playback4 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia11" value="1" />
+    </path>
+    
+    <path name="compress-offload-playback4 bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+        <path name="compress-offload-playback4 bt-sco" />
     </path>
 
     <path name="compress-offload-playback5">
@@ -441,6 +456,11 @@
     <path name="compress-offload-playback5 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia12" value="1" />
     </path>
+    
+    <path name="compress-offload-playback5 bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+        <path name="compress-offload-playback5 bt-sco" />
+    </path>
 
     <path name="compress-offload-playback6">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia13" value="1" />
@@ -449,6 +469,11 @@
     <path name="compress-offload-playback6 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia13" value="1" />
     </path>
+    
+    <path name="compress-offload-playback6 bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+        <path name="compress-offload-playback6 bt-sco" />
+    </path>
 
     <path name="compress-offload-playback7">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia14" value="1" />
@@ -456,6 +481,11 @@
 
     <path name="compress-offload-playback7 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia14" value="1" />
+    </path>
+    
+    <path name="compress-offload-playback7 bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+        <path name="compress-offload-playback7 bt-sco" />
     </path>
 
     <path name="audio-record">
@@ -487,7 +517,7 @@
     </path>
 
     <path name="audio-record-compress bt-sco-wb">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="audio-record-compress bt-sco" />
     </path>
 
@@ -504,7 +534,7 @@
     </path>
 
     <path name="low-latency-record bt-sco-wb">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="low-latency-record bt-sco" />
     </path>
 
@@ -586,7 +616,7 @@
     </path>
 
     <path name="vowlan-call bt-sco-wb">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="vowlan-call bt-sco" />
     </path>
 
@@ -651,7 +681,7 @@
     </path>
 
     <path name="hfp-sco-wb">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="hfp-sco" />
     </path>
 
@@ -906,7 +936,7 @@
     <path name="wsa-speaker">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="90" />
+        <ctl name="RX1 Digital Volume" value="88" />
         <ctl name="WSA Spk Switch" value="WSA" />
         <ctl name="SpkrMono WSA_RDAC" value="Switch" />
    </path>
@@ -946,6 +976,8 @@
     <path name="handset-mic">
         <path name="adc1" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
+        <ctl name="DEC1 Volume" value="96" />
+        <ctl name="DEC2 Volume" value="96" />
     </path>
 
     <path name="headphones">
@@ -957,7 +989,7 @@
         <ctl name="HPHR" value="Switch" />
         <ctl name="headset amp" value="ENABLE"/>
     </path>
-    
+
     <path name="hph-highquality-mode">
         <ctl name="RX HPH Mode" value="HD2" />
     </path>
@@ -1078,12 +1110,10 @@
     <path name="capture-fm">
     </path>
 
-    <!-- Dual MIC devices -->
+   <!-- Dual MIC devices -->
     <path name="speaker-dmic-endfire">
         <path name="adc1" />
-<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="ADC3 Volume" value="6" />
-<!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="MI2S_TX Channels" value="Two" />
         <ctl name="ADC2 MUX" value="INP3" />
@@ -1102,7 +1132,12 @@
     </path>
 
     <path name="voice-speaker-dmic-ef">
-        <path name="dmic-endfire" />
+		<ctl name="MI2S_TX Channels" value="Two" />
+		<ctl name="ADC3 Volume" value="6" />
+        <ctl name="DEC1 MUX" value="ADC2" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="DEC2 MUX" value="ADC1" />
     </path>
 
     <path name="voice-rec-dmic-ef">
@@ -1115,6 +1150,8 @@
 
     <path name="handset-stereo-dmic-ef">
         <path name="speaker-dmic-endfire" />
+        <ctl name="DEC1 Volume" value="96" />
+        <ctl name="DEC2 Volume" value="96" />
     </path>
 
     <path name="speaker-stereo-dmic-ef">
