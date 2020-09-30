@@ -65,7 +65,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.gyro.android=0 \
     persist.camera.HAL3.enabled=1 \
     persist.camera.is_type=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    persist.ts.rtmakeup=true \
+    media.camera.ts.monotonic=1
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -172,6 +174,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVVERIDES += \
    ro.vendor.extension_library=libqti-perfd-client.so \
    ro.vendor.qti.sys.fw.bg_apps_limit=60
+
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ct.device.model=XMP-2016030
 
 # IOP and Workload Classifier props
 PRODUCT_PROPERTY_OVERRIDES += \
