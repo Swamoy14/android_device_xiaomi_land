@@ -346,7 +346,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    vndk-sp
+    vndk_package
 
 # Whitelisted apps
 PRODUCT_COPY_FILES += \
