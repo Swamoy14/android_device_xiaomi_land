@@ -46,7 +46,3 @@ export HAVOC_BUILD_TYPE=Official
 
 HAVOC_MAINTAINER := Sairam Majgaonkar (Sairam60)
 HAVOC_GROUP_URL := https://t.me/havoc_land
-
-# Use Gapps
-WITH_GAPPS := true
-TARGET_GAPPS_ARCH := arm64
