@@ -94,7 +94,7 @@ public:
 	ipacm_alg *alg_table;
 
 	/* Store private subnet configuration from XML file */
-	ipa_private_subnet private_subnet_table[IPA_MAX_PRIVATE_SUBNET_ENTRIES];
+	ipa_private_subnet private_subnet_table[IPA_MAX_PRIVATE_SUBNET_ENTRIES + IPA_MAX_MTU_ENTRIES];
 
 	/* Store the non nat iface names */
 	NatIfaces *pNatIfaces;
@@ -354,6 +354,14 @@ public:
 #endif /* defined(FEATURE_IPA_ANDROID)*/
 
 	static const char *DEVICE_NAME_ODU;
+
+#ifdef FEATURE_VLAN_BACKHAUL
+	/* Store vlan dscp mapping from XML file */
+	ipacm_qos_conf_t qos_config;
+	bool vlan_devices[IPA_VLAN_IF_MAX];
+	void set_iface_vlan_mode(enum ipa_vlan_ifaces dev, bool state);
+	bool iface_in_vlan_mode(const char *phys_iface_name);
+#endif
 
 private:
 	enum ipa_hw_type ver;

@@ -77,6 +77,7 @@ extern "C"
 
 #define IPA_MAX_IFACE_ENTRIES 20
 #define IPA_MAX_PRIVATE_SUBNET_ENTRIES 3
+#define IPA_MAX_MTU_ENTRIES 3
 #define IPA_MAX_ALG_ENTRIES 20
 #define IPA_MAX_RM_ENTRY 6
 
@@ -106,6 +107,12 @@ extern "C"
 #define TCP_SYN_SHIFT 17
 #define TCP_RST_SHIFT 18
 #define NUM_IPV6_PREFIX_FLT_RULE 1
+#define NUM_IPV6_PREFIX_MTU_RULE 1
+
+#define MAX_CONNTRACK_ENTRIES 100
+#define CT_ENTRIES_BUFFER_SIZE 8096
+#define LOOPBACK_MASK 0xFF000000
+#define LOOPBACK_ADDR 0x7F000000
 
 /*---------------------------------------------------------------------------
 										Return values indicating error status
@@ -123,6 +130,15 @@ extern "C"
 #define IPA_MAX_NUM_AMPDU_RULE  15
 #define IPA_MAC_ADDR_SIZE  6
 #define IPA_MAX_NUM_SW_PDNS 15
+
+#define DEFAULT_MTU_SIZE 1500
+
+#define VETH_NETDEV "VETH0"
+#define IPA_MAX_QOS_ENTRIES 4
+#define VLAN_TPID_SIZE 2
+#define VLAN_VID_MASK 0x0FFF
+#define pM(mac) mac[0],mac[1],mac[2],mac[3],mac[4],mac[5]
+#define pV6(ipv6) ipv6[0],ipv6[1],ipv6[2],ipv6[3]
 
 /*===========================================================================
 										 GLOBAL DEFINITIONS AND DECLARATIONS
@@ -359,7 +375,8 @@ typedef enum
 	Q6_WAN = 0,
 	WLAN_WAN,
 	ECM_WAN,
-	Q6_MHI_WAN
+	Q6_MHI_WAN,
+	ETH_WAN
 } ipacm_wan_iface_type;
 
 typedef struct _ipacm_event_iface_up

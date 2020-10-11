@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-2019, The Linux Foundation. All rights reserved.
+Copyright (c) 2013-2020, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -53,7 +53,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define IPA_V2_NUM_DEFAULT_WAN_FILTER_RULE_IPV4 2
 
 #ifdef FEATURE_IPA_ANDROID
-#define IPA_V2_NUM_DEFAULT_WAN_FILTER_RULE_IPV6 7
+#define IPA_V2_NUM_DEFAULT_WAN_FILTER_RULE_IPV6 4
 #define IPA_V2_NUM_TCP_WAN_FILTER_RULE_IPV6 3
 #define IPA_V2_NUM_MULTICAST_WAN_FILTER_RULE_IPV6 3
 #define IPA_V2_NUM_FRAG_WAN_FILTER_RULE_IPV6 1
@@ -95,6 +95,36 @@ typedef struct
 	bool coalesce_udp_enable;
 }ipacm_coalesce;
 
+#ifdef FEATURE_VLAN_BACKHAUL
+typedef struct
+{
+	ipa_ip_type iptype;
+	char name[IPA_RESOURCE_NAME_MAX];
+	uint16_t vlan_id;
+	uint8_t dscp;
+	bool v4_addr_set;
+	uint32_t v4_addr;
+	bool v6_global_addr_set;
+	uint32_t ipv6_addr[MAX_DEFAULT_v6_ROUTE_RULES][4];
+	int num_dft_rt_v6;
+	uint32_t dft_rt_rule_hdl[MAX_DEFAULT_v4_ROUTE_RULES +2*MAX_DEFAULT_v6_ROUTE_RULES];
+	int num_ipv6_dest_flt_rule;
+	uint32_t ipv6_dest_flt_rule_hdl[MAX_DEFAULT_v6_ROUTE_RULES];
+	bool v4_upstream_set;
+	bool v6_upstream_set;
+	bool wan_clnt_set;
+	uint32_t wan_clnt_id;
+}vlan_iface_context;
+
+typedef struct
+{
+	bool netdev_in_vlan_mode;
+	int upstream_if_index;
+	uint32_t wan_v4_addr;
+	std::map <int , vlan_iface_context *> vlan_iface_table;
+}vlan_wan_context;
+#endif
+
 /* wan iface */
 class IPACM_Wan : public IPACM_Iface
 {
@@ -105,6 +135,8 @@ public:
 	static bool wan_up;
 	static bool wan_up_v6;
 	static uint8_t xlat_mux_id;
+	static uint16_t mtu_default_wan;
+	uint16_t mtu_size;
 	/* IPACM interface name */
 	static char wan_up_dev_name[IF_NAME_LEN];
 	static uint32_t curr_wan_ip;
@@ -135,6 +167,26 @@ public:
 #else
 		return wan_up;
 #endif
+	}
+
+	static uint16_t queryMTU(int ipa_if_num_tether, enum ipa_ip_type iptype)
+	{
+		if (iptype == IPA_IP_v4)
+		{
+			if (isWanUP(ipa_if_num_tether))
+			{
+				return mtu_default_wan;
+			}
+		}
+		else if (iptype == IPA_IP_v6)
+		{
+			if (isWanUP_V6(ipa_if_num_tether))
+			{
+				return mtu_default_wan;
+
+			}
+		}
+		return DEFAULT_MTU_SIZE;
 	}
 
 	static bool isWanUP_V6(int ipa_if_num_tether)
@@ -253,9 +305,16 @@ public:
 		return curr_wan_ip;
 	}
 
-	static bool getXlat_Mux_Id()
+	static int getXlat_Mux_Id()
 	{
-		return xlat_mux_id;
+		if (is_xlat)
+		{
+			IPACMDBG_H("xlat_mux_id: %d\n", xlat_mux_id);
+			return xlat_mux_id;
+		} else {
+			IPACMDBG_H("no xlat return invalid mux-id: 0\n");
+			return 0;
+		}
 	}
 
 	static void clearExtProp()
@@ -375,6 +434,10 @@ private:
 
 	/* handle for TCP RST rule */
 	uint32_t tcp_rst_hdl;
+
+#ifdef FEATURE_VLAN_BACKHAUL
+	vlan_wan_context vlan_wan_ctx;
+#endif
 
 	inline ipa_wan_client* get_client_memptr(ipa_wan_client *param, int cnt)
 	{
@@ -554,7 +617,12 @@ private:
 		return IPACM_SUCCESS;
 	}
 
+#ifndef FEATURE_VLAN_BACKHAUL
 	int handle_wan_hdr_init(uint8_t *mac_addr);
+#else
+	int handle_wan_hdr_init(uint8_t *mac_addr, uint16_t vlan_id = 0);
+#endif
+
 	int handle_wan_client_ipaddr(ipacm_event_data_all *data);
 	int handle_wan_client_route_rule(uint8_t *mac_addr, ipa_ip_type iptype);
 
@@ -616,8 +684,6 @@ private:
 
 	int add_dft_filtering_rule(struct ipa_flt_rule_add* rules, int rule_offset, ipa_ip_type iptype);
 
-	int add_tcpv6_filtering_rule(struct ipa_flt_rule_add* rules, int rule_offset);
-
 	int install_wan_filtering_rule(bool is_sw_routing);
 
 	void handle_wlan_SCC_MCC_switch(bool, ipa_ip_type);
@@ -646,6 +712,21 @@ private:
 	int add_tcp_fin_rst_exception_rule();
 
 	int delete_tcp_fin_rst_exception_rule();
+
+	/* Query mtu size */
+	int query_mtu_size();
+
+#ifdef FEATURE_VLAN_BACKHAUL
+	int handle_vlan_wan_iface_up(int if_index);
+
+	int handle_vlan_wan_iface_addr_evt(ipacm_event_data_addr *data = NULL);
+
+	int handle_vlan_wan_iface_neigh_evt(ipacm_event_data_all *data = NULL);
+
+	int handle_vlan_wan_iface_upstream_add(ipacm_event_data_iptype *data = NULL);
+
+	int handle_vlan_wan_iface_down(int if_index);
+#endif
 };
 
 #endif /* IPACM_WAN_H */
