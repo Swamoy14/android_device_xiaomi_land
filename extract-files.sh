@@ -78,6 +78,12 @@ extract "${MY_DIR}"/proprietary-files.txt "${SRC}" \
 
 DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
+patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/bin/gx_fpcmd
+patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/bin/gx_fpd
+patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/fingerprint.goodix.so
+patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libfp_client.so
+patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libfpservice.so
+
 patchelf --set-soname "activity_recognition.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/activity_recognition.msm8937.so
 patchelf --set-soname "activity_recognition.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/activity_recognition.msm8937.so
 patchelf --set-soname "gatekeeper.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/gatekeeper.msm8937.so

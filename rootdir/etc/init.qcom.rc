@@ -149,6 +149,9 @@ on post-fs-data
     # Create directory used by display clients
     mkdir /data/vendor/display 0770 system graphics
 
+    # Create IOP deamon related dirs
+    mkdir /data/vendor/iop 0700 root system
+
     # Create directory used by media clients
     mkdir /data/vendor/media 0770 mediacodec media
 
@@ -242,6 +245,11 @@ on property:sys.boot_completed=1
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
 
+    #WDSP FW boot sysfs node used by STHAL
+    chown media audio /sys/kernel/wdsp0/boot
+    chown media audio /sys/kernel/wcd_cpe0/fw_name
+    chown media audio /sys/kernel/aud_dev/state
+
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
@@ -253,7 +261,6 @@ on property:vendor.media.target.version=*
 
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.camera-provider-2-4
-    start vendor.qcom-c_main-sh
     restart vendor.audio-hal-2-0
     restart vendor.fps_hal
     start wcnss-service
@@ -265,6 +272,14 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
+
+service iop /system/vendor/bin/iop
+    class main
+    user root
+    group root
+    disabled
+    socket iop seqpacket 0666 root system
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
@@ -308,12 +323,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
-service vendor.qcom-c_main-sh /vendor/bin/init.class_main.sh
-    class main
-    user root
-    group root system
-    oneshot
-
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
@@ -321,15 +330,8 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     disabled
     oneshot
 
-on property:init.svc.surfaceflinger=restarting
-    restart vendor.hwcomposer-2-3
-
 on property:sys.boot_completed=1
     start qcom-post-boot
-
-on property:init.svc.qcom-post-boot=stopped
-    # Set min gpu freq as 320mhz
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 320000000
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
