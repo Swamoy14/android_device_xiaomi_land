@@ -25,12 +25,6 @@ on boot
     write /dev/cpuset/system-background/cpus "4-7"
     write /dev/cpuset/top-app/cpus "0-7"
 
-    # Input boost configuration
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1401000"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 300
-    write /sys/module/cpu_boost/parameters/input_boost_event 1
-    write /sys/module/cpu_boost/parameters/sched_boost_on_input 1
-
     # Bring all cores online
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
