@@ -122,7 +122,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.msm8937 \
-    GCam
+    CameraGo
     
 # Charger
 include $(LOCAL_PATH)/rootdir/etc/charger/charger.mk
