@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017, 2019 The LineageOS Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,85 +16,51 @@
 # limitations under the License.
 #
 
-# If we're being sourced by the common script that we called,
-# stop right here. No need to go down the rabbit hole.
-if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
-    return
-fi
-
 set -e
 
-# Required!
 DEVICE=land
 VENDOR=xiaomi
 
-# Load extract_utils and do some sanity checks
+# Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
+if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-LINEAGE_ROOT="${MY_DIR}/../../.."
+LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$LINEAGE_ROOT/vendor/lineage/build/tools/extract_utils.sh"
+HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
 fi
-source "${HELPER}"
+. "$HELPER"
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
-SECTION=
-KANG=
-
-while [ "${#}" -gt 0 ]; do
-    case "${1}" in
-        -n | --no-cleanup )
-                CLEAN_VENDOR=false
-                ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"; shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
+while [ "$1" != "" ]; do
+    case $1 in
+        -n | --no-cleanup )     CLEAN_VENDOR=false
+                                ;;
+        -s | --section )        shift
+                                SECTION=$1
+                                CLEAN_VENDOR=false
+                                ;;
+        * )                     SRC=$1
+                                ;;
     esac
     shift
 done
 
-if [ -z "${SRC}" ]; then
-    SRC="adb"
+if [ -z "$SRC" ]; then
+    SRC=adb
 fi
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
-extract "${MY_DIR}"/proprietary-files.txt "${SRC}" \
-        "${KANG}" --section "${SECTION}"
+extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
 
-DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "$DEVICE_BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
 
-patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/bin/gx_fpcmd
-patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/bin/gx_fpd
-patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/fingerprint.goodix.so
-patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libfp_client.so
-patchelf --replace-needed libbinder.so libbindergx.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libfpservice.so
-
-patchelf --set-soname "activity_recognition.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/activity_recognition.msm8937.so
-patchelf --set-soname "activity_recognition.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/activity_recognition.msm8937.so
-patchelf --set-soname "gatekeeper.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/gatekeeper.msm8937.so
-patchelf --set-soname "gatekeeper.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/gatekeeper.msm8937.so
-patchelf --set-soname "hwcomposer.msm8937.so" "$DEVICE_BLOB,ROOT"/vendor/lib/hw/hwcomposer.msm8937.so
-patchelf --set-soname "hwcomposer.msm8937.so" "$DEVICE_BLOB,ROOT"/vendor/lib64/hw/hwcomposer.msm8937.so
-patchelf --set-soname "keystore.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/keystore.msm8937.so
-patchelf --set-soname "keystore.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/keystore.msm8937.so
-patchelf --set-soname "sound_trigger.primary.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/sound_trigger.primary.msm8937.so
-patchelf --set-soname "sound_trigger.primary.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/sound_trigger.primary.msm8937.so
-patchelf --set-soname "vulkan.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/vulkan.msm8937.so
-patchelf --set-soname "vulkan.msm8937.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/vulkan.msm8937.so
-
-"${MY_DIR}/setup-makefiles.sh"
+"$MY_DIR"/setup-makefiles.sh

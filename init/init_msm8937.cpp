@@ -73,10 +73,10 @@ void check_device()
         heapmaxfree = "8m";
     } else if (sys.totalram > 2048ull * 1024 * 1024) {
         // from - phone-xxhdpi-3072-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "128m";
+        heapstartsize = "8m";
+        heapgrowthlimit = "288m";
         heapsize = "768m";
-        heapminfree = "4m";
+        heapminfree = "512k";
 	heapmaxfree = "8m";
     } else {
         // from - phone-xxhdpi-2048-dalvik-heap.mk
@@ -85,39 +85,13 @@ void check_device()
         heapsize = "512m";
         heapminfree = "2m";
         heapmaxfree = "8m";
-
    }
 }
 
-void set_zram_size(void)
-{
-    FILE *f = fopen("/sys/block/zram0/disksize", "wb");
-    int MB = 1024 * 1024;
-    std::string zram_disksize;
-    struct sysinfo si;
-
-    // Check if zram exist
-    if (f == NULL) {
-        return;
-    }
-
-    // Initialize system info
-    sysinfo(&si);
-
-    // Set zram disksize (divide RAM size by 3)
-    zram_disksize = std::to_string(si.totalram / MB / 3);
-
-    // Write disksize to sysfs
-    fprintf(f, "%sM", zram_disksize.c_str());
-
-    // Close opened file
-    fclose(f);
-}
 
 void vendor_load_properties()
 {
     check_device();
-    set_zram_size();
 
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);

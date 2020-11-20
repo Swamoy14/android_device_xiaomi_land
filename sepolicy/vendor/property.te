@@ -1,8 +1,10 @@
-# Camera
-type vendor_camera_prop, property_type;
+type qemu_hw_mainkeys_prop, property_type;
+
+#Spectrum
+type spectrum_prop, property_type;
 
 # Dirac
 type dirac_prop, property_type;
 
-# Hwkeys
-type qemu_hw_mainkeys_prop, property_type;
+# TimeKeep
+type vendor_timekeep_prop, property_type;

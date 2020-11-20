@@ -1,6 +1,1 @@
-# Needed for use .so files in /vendor/lib64 needed by ims which runs as com.android.phone (radio)
-# r_dir_file(radio, vendor_file)
-typeattribute radio system_executes_vendor_violators;
-allow radio vendor_file:file rx_file_perms;
-allow radio gpuservice:binder call;
-allow radio system_app_data_file:dir getattr;
+allow system_server radio_prop:property_service set;

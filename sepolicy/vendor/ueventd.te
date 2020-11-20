@@ -1,7 +1,4 @@
-typeattribute ueventd data_between_core_and_vendor_violators;
-
-allow ueventd self:capability sys_nice;
-allow ueventd fpc_sysfs:file rw_file_perms;
-
-allow ueventd wifi_vendor_data_file:dir r_dir_perms;
-allow ueventd wifi_vendor_data_file:file r_file_perms;
+allow ueventd sysfs_fps_attr:file rw_file_perms;
+allow ueventd sysfs_kcal:dir r_dir_perms;
+allow ueventd sysfs_kcal:file rw_file_perms;
+allow ueventd sysfs_kcal:lnk_file r_file_perms;

@@ -4351,12 +4351,6 @@ int32_t QCameraParameters::setTemporalDenoise(const QCameraParameters& params)
     property_get("persist.camera.tnr_cds", value, "0");
     uint8_t tnr_cds = (uint8_t)atoi(value);
 
-    if ((m_pCapability->qcom_supported_feature_mask &
-            CAM_QCOM_FEATURE_CDS) == 0) {
-        LOGD("CDS is not supported. Not applying user params for this.");
-        return NO_ERROR;
-    }
-
     if (m_bRecordingHint_new == true) {
         if (video_str) {
             if ((video_prev_str == NULL) || (strcmp(video_str, video_prev_str) != 0)) {
@@ -6349,11 +6343,13 @@ int32_t QCameraParameters::setPreviewFpsRange(int min_fps,
     property_get("persist.debug.set.fixedfps", value, "0");
     fixedFpsValue = atoi(value);
 
-    // Don't allow function callers to request min fps same as max fps
-    // I mean SnapdragonCamera.
-    if (!isHfrMode() && max_fps >= 24000 && min_fps == max_fps) {
-        LOGH("min_fps %d same as max_fps %d, setting min_fps to 7000", min_fps, max_fps);
-        min_fps = 7000;
+    // Workaround backend AEC bug that doesn't set high enough ISO values when the min FPS value
+    // is higher than expected, which resulted in a very dark preview in low light conditions
+    // while recording. The lowest FPS value AEC expects in such conditions is 19.99, so 15fps
+    // as the min FPS value should be sufficient.
+    if (!isHfrMode() && min_fps > 15000) {
+        LOGH("Original min_fps %d, changing min_fps to 15000", min_fps);
+        min_fps = 15000;
     }
 
     LOGD("E minFps = %d, maxFps = %d , vid minFps = %d, vid maxFps = %d",
@@ -7811,11 +7807,11 @@ int32_t QCameraParameters::setCDSMode(const QCameraParameters& params)
     const char *video_prev_str = get(KEY_QC_VIDEO_CDS_MODE);
     int32_t rc = NO_ERROR;
 
-
-#if 1
-    LOGD("CDS is not supported. Not applying user params for this.");
-    return rc;
-#endif
+    if ((m_pCapability->qcom_supported_feature_mask &
+            CAM_QCOM_FEATURE_CDS) == 0) {
+        LOGD("CDS is not supported. Not applying user params for this.");
+        return NO_ERROR;
+    }
 
     if (m_bRecordingHint_new == true) {
         if (video_str) {

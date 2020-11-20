@@ -1,21 +1,14 @@
-allow init wcnss_device:chr_file write;
+allow init fingerprintd:binder { transfer call };
+allow init gx_fpd_device:chr_file { write ioctl };
+allow init sysfs_devices_system_cpu:dir r_dir_perms;
+allow init sysfs:file setattr;
+allow init sysfs_leds:lnk_file read;
+allow init sysfs_msm_perf:file { open write };
+
+#FM
 allow qti_init_shell {
     fm_prop
 }:property_service set;
-
-# Allow init to bind mount loader config for media swcodec
-allow init system_file:file mounton;
-
-# adsprpcd
-allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
-
-# LEDs
-allow init sysfs_leds:lnk_file read;
-
-allow init sysfs:file setattr;
-
-# CPU
-allow init sysfs_devices_system_cpu:dir r_dir_perms;
 
 # DT2W
 allow init sysfs_dt2w:file { rw_file_perms setattr };
